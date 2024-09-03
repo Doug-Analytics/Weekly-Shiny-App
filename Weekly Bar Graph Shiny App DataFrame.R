@@ -5,9 +5,9 @@ library(jsonlite)
 
 options(scipen = 9999)
 
-#source("G:/My Drive/Giants/Code/ftn_functions.R")
+source("G:/My Drive/Giants/Code/ftn_functions.R")
 
-source("ftn_functions.R")
+#source("ftn_functions.R")
 
 
 SEASON <- 2023
@@ -68,4 +68,4 @@ ftn_games <- as.data.frame(fromJSON(rawToChar(req$content)))
   
 
   
-  saveRDS(data, "Weekly Bar Graph_data.rds")
+  saveRDS(concept, "Weekly Bar Graph_data.rds")
