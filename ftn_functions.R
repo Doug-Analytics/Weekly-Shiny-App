@@ -57,7 +57,8 @@ ftn_game_data <- function(type = "charts",
   ### showing completion of process
   print(paste0("Collection of FTN ", type,  " data is complete."))
   
-  write_csv(api_data, paste0("G:/My Drive/Giants/Code/FTN_", type, "_", year, ".csv"))
+    write_csv(api_data, paste0("FTN_", type, "_", year, ".csv"))
+}
   
 }
 
@@ -88,6 +89,7 @@ ftn_other_data <- function(type = "players"){
   ### showing completion of process
   print(paste0("Collection of FTN ", type,  " data is complete."))
   
-  write_csv(api_data, paste0("G:/My Drive/Giants/Code/FTN_", type, ".csv"))
+    write_csv(api_data, paste0("FTN_", type, "_", year, ".csv"))
+}
   
 }
