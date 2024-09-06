@@ -10,7 +10,7 @@ options(scipen = 9999)
 source("ftn_functions.R")
 
 
-SEASON <- 2023
+SEASON <- 2024
 key <- "bd99fcb1-bc62-4655-822c-9eb02d09d420"
 
 
