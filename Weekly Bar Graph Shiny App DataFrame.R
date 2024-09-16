@@ -35,7 +35,7 @@ ftn_games <- as.data.frame(fromJSON(rawToChar(req$content)))
   concept <- ftn_charts %>%
       left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
       left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
-      filter(!is.na(concept), concept != "", !is.na(off.x), !is.na(def.x)) %>%
+      filter(!is.na(concept), concept != "", concept != "Kneel", !is.na(off.x), !is.na(def.x)) %>%
       mutate(off.x = case_when(
         off.x == "CLV" ~ "CLE",
         off.x == "BLT" ~ "BAL",
@@ -58,6 +58,9 @@ ftn_games <- as.data.frame(fromJSON(rawToChar(req$content)))
       concept == "Counter" ~ "Counter",              
       concept == "Trap" ~ "Trap",  
       concept == "Draw" ~ "Draw",  
+      concept == "Fullback Run" ~ "WR/FB Run",  
+      concept == "QB Sneak" ~ "QB Sneak",
+      concept == "Trick/WR Run" ~ "WR/FB Run",  
       TRUE ~ "Other"
     )) %>%
     group_by(seas, week, off.x) %>%
