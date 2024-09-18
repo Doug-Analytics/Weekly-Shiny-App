@@ -1,27 +1,54 @@
-library(tidyverse)
-library(nflreadr)
-library(httr)
-library(jsonlite)
+permissions:
+  contents: write
 
-options(scipen = 9999)
+on:
+  schedule:
+    # Friday
+    - cron: '0 6,9,12,15,18,21 * * 5'
+    # Saturday
+    - cron: '0 0,6,9,12,15,18,21 * * 6'
+    # Sunday
+    - cron: '0 0,6,9,12,15,18,21 * * 0'
+    # Monday
+    - cron: '0 0,6,9,12,15,18,21 * * 1'
+    # Tuesday
+    - cron: '0 0,6,9,12,15,18,21 * * 2'
+    # Wednesday
+    - cron: '0 0,6,9,12,15,18,21 * * 3'
+    # Thursday
+    - cron: '0 0,9,15,21 * * 4'
 
-#source("G:/My Drive/Giants/Code/ftn_functions.R")
+  workflow_dispatch:
 
-source("ftn_functions.R")
+jobs:
+  import-data:
+    runs-on: ubuntu-latest
 
-SEASON <- 2024
-key <- Sys.getenv("API_KEY")  # Use the API key from the environment variable
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
 
-ftn_charts <- ftn_game_data(type = "charts", year = SEASON)
-ftn_plays <- ftn_game_data(type = "plays", year = SEASON)
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
 
-url <- paste0("https://data.ftndata.com/games/", SEASON)
-req <- GET(url, add_headers(Authorization = key))
-ftn_games <- as.data.frame(fromJSON(rawToChar(req$content)))
+      - name: Install packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            tidyverse
+            nflreadr
+            httr
+            jsonlite
 
-# Debug prints
-print(names(ftn_charts))
-print(names(ftn_plays))
-print(names(ftn_games))
+      - name: Import data
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: Rscript -e 'Sys.setenv(API_KEY = Sys.getenv("API_KEY")); source("Weekly Bar Graph Shiny App DataFrame.R")'
 
-# Continue with your data processing
+      - name: Commit results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add *
+          git commit -m 'Data updated' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
