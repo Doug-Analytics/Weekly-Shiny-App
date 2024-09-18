@@ -11,7 +11,7 @@ source("ftn_functions.R")
 
 
 SEASON <- 2024
-key <- "bd99fcb1-bc62-4655-822c-9eb02d09d420"
+key <- Sys.getenv("API_KEY")  # Use the API key from the environment variable
 
 
 ftn_charts <- ftn_game_data(type = "charts", year = SEASON)
