@@ -12,7 +12,7 @@ ftn_game_data <- function(type = "charts",
   start <- 0
   
   ### adding authorization code into header
-  auth_header <- "bd99fcb1-bc62-4655-822c-9eb02d09d420"
+  auth_header <- Sys.getenv("API_KEY")  # Use the API key from the environment variable
   
   ### creating function to gather all 2023 data
   while (TRUE) {
@@ -64,7 +64,7 @@ ftn_game_data <- function(type = "charts",
 ftn_other_data <- function(type = "players"){
   
   ### adding authorization code into header
-  auth_header <- "bd99fcb1-bc62-4655-822c-9eb02d09d420"
+  auth_header <- Sys.getenv("API_KEY")  # Use the API key from the environment variable
   
   ### URL
   url <- paste0("https://data.ftndata.com/", type)
