@@ -1,32 +1,25 @@
 permissions:
   contents: write
 
-
 on:
   schedule:
     # Friday
     - cron: '0 6,9,12,15,18,21 * * 5'
-    
     # Saturday
     - cron: '0 0,6,9,12,15,18,21 * * 6'
-    
     # Sunday
     - cron: '0 0,6,9,12,15,18,21 * * 0'
-    
     # Monday
     - cron: '0 0,6,9,12,15,18,21 * * 1'
-    
     # Tuesday
     - cron: '0 0,6,9,12,15,18,21 * * 2'
-    
     # Wednesday
     - cron: '0 0,6,9,12,15,18,21 * * 3'
-    
     # Thursday
     - cron: '0 0,9,15,21 * * 4'
 
   workflow_dispatch:
-  
+
 jobs:
   import-data:
     runs-on: ubuntu-latest
@@ -48,7 +41,9 @@ jobs:
             jsonlite
 
       - name: Import data
-        run: Rscript -e 'source("Weekly Bar Graph Shiny App DataFrame.R")'
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: Rscript -e 'Sys.setenv(API_KEY = Sys.getenv("API_KEY")); source("Weekly Bar Graph Shiny App DataFrame.R")'
 
       - name: Commit results
         run: |
