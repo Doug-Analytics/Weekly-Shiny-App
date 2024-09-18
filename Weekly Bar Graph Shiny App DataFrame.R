@@ -105,6 +105,6 @@ ftn_games <- as.data.frame(fromJSON(rawToChar(req$content)))
     summarize(plays_shell = n(), rate = plays_shell/last(snaps_shell), .groups = "drop") 
 
 data <- concept %>%
- left_join(shell, by = c("seas", "team", "opp", "week")
+ left_join(shell, by = c("seas", "team", "opp", "week"))
 
   saveRDS(data, "Weekly_Bar_Graph_data.rds")
