@@ -66,9 +66,45 @@ ftn_games <- as.data.frame(fromJSON(rawToChar(req$content)))
     group_by(seas, week, off.x) %>%
     mutate(snaps = n()) %>%
     ungroup() %>%
-    group_by(seas, off.x, def.x, week, concept) %>%
+    group_by(seas, team = off.x, opp = def.x, week, concept) %>%
     summarize(plays = n(), rate = plays/last(snaps), .groups = "drop") 
   
+ shell <- ftn_charts %>%
+      left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
+      left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
+      filter(!is.na(shell), shell != "", !is.na(off.x), !is.na(def.x)) %>%
+      mutate(off.x = case_when(
+        off.x == "CLV" ~ "CLE",
+        off.x == "BLT" ~ "BAL",
+        off.x == "ARZ" ~ "ARI",
+        off.x == "HST" ~ "HOU",
+        TRUE ~ off.x
+      )) %>%
+      mutate(def.x = case_when(
+        def.x == "CLV" ~ "CLE",
+        def.x == "BLT" ~ "BAL",
+        def.x == "ARZ" ~ "ARI",
+        def.x == "HST" ~ "HOU",
+        TRUE ~ def.x
+      )) %>%
+    mutate(shell = case_when(
+      shell == 0 ~ "Cover 0",  
+      shell == 1 ~ "Cover 1",  
+      shell == 2 ~ "Cover 2",  
+      shell == 3 ~ "Cover 3",   
+      shell == 4 ~ "Cover 4",            
+      shell == 6 ~ "Cover 6",  
+      shell == 9 ~ "Cover 9",  
+      shell == "2M" ~ "Cover 2 Man",  
+      TRUE ~ "Other"
+    )) %>%
+    group_by(seas, week, off.x) %>%
+    mutate(snaps_shell = n()) %>%
+    ungroup() %>%
+    group_by(seas, team = def.x, opp = off.x, week, shell) %>%
+    summarize(plays_shell = n(), rate = plays_shell/last(snaps_shell), .groups = "drop") 
 
-  
-  saveRDS(concept, "Weekly_Bar_Graph_data.rds")
+data <- concept %>%
+ left_join(shell, by = c("seas", "team", "opp", "week")
+
+  saveRDS(data, "Weekly_Bar_Graph_data.rds")
