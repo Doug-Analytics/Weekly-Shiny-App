@@ -235,6 +235,23 @@ pressure_allowed <- ftn_charts %>%
   summarize(plays = n(),
             rate = plays/last(snaps_pass), .groups = "drop") 
 
+pass_rushers <- ftn_charts %>%
+  left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
+  left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
+  filter(type.x == "PASS", !is.na(off.x), !is.na(def.x)) %>%
+  mutate(pass_rushers_bracket = case_when(
+    pru <= 3 ~ "3 or Fewer",  
+    pru == 4 ~ "4",  
+    pru == 5 ~ "5", 
+    pru == 6 ~ "6",          
+    pru >= 7 ~ "7 or More")) %>%
+  group_by(seas, week, off.x) %>%
+  mutate(snaps_pass = n()) %>%
+  ungroup() %>%
+  group_by(seas, team = def.x, opp = off.x, week, category = pass_rushers_bracket) %>%
+  summarize(plays = n(),
+            rate = plays/last(snaps_pass), .groups = "drop") 
+
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
@@ -256,3 +273,5 @@ saveRDS(run_gap, "Weekly_Bar_Graph_data_run_gap.rds")
 saveRDS(play_action, "Weekly_Bar_Graph_data_play_action.rds")   
 
 saveRDS(pressure_allowed, "Weekly_Bar_Graph_data_pressure_allowed.rds")   
+
+saveRDS(pass_rushers, "Weekly_Bar_Graph_data_pass_rushers.rds") 
