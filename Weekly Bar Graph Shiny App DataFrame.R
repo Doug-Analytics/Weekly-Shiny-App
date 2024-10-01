@@ -150,7 +150,7 @@ ttp <- ftn_charts %>%
   ungroup() %>%
   group_by(seas, team = def.x, opp = off.x, week, category = ttp_bracket) %>%
   summarize(plays = n(),
-            rate = plays/last(snaps_ttp, .groups = "drop") 
+            rate = plays/last(snaps_ttp), .groups = "drop") 
 
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
