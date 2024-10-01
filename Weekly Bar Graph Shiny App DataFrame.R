@@ -134,6 +134,23 @@ route <- ftn_charts %>%
   summarize(plays = n(),
             rate = plays/last(snaps_rte), .groups = "drop") 
 
+ttp <- ftn_charts %>%
+  left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
+  left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
+  filter(!is.na(ttp), ttp != "", !is.na(off.x), !is.na(def.x)) %>%
+  mutate(ttp_bracket = case_when(
+    ttp < 1 ~ "Less than 1s",  
+    ttp >= 1 & ttp <= 1.5 ~ "1s-1.5s",  
+    ttp > 1.5 & ttp <= 2 ~ "1.6s-2s",  
+    ttp > 2 & ttp <= 3 ~ "2.1s-3s",   
+    ttp > 3 & ttp <= 4 ~ "3.1s-4s",            
+    ttp > 4. ~ "Longer than 4s")) %>%
+  group_by(seas, week, off.x) %>%
+  mutate(snaps_ttp = n()) %>%
+  ungroup() %>%
+  group_by(seas, team = def.x, opp = off.x, week, category = ttp_bracket) %>%
+  summarize(plays = n(),
+            rate = plays/last(snaps_ttp, .groups = "drop") 
 
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
@@ -142,3 +159,5 @@ saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
 saveRDS(air_yards, "Weekly_Bar_Graph_data_air_yards.rds")
 
 saveRDS(route, "Weekly_Bar_Graph_data_route.rds")
+
+saveRDS(ttp, "Weekly_Bar_Graph_data_ttp.rds")            
