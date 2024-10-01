@@ -178,6 +178,19 @@ downs <- load_pbp(SEASON) %>%
   reframe(plays = n(),
           rate = plays/last(snaps_down))
 
+ydstogo <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  mutate(ydstogo_bracket = case_when(
+    ydstogo <= 3 ~ "1-3 yards",  
+    ydstogo >= 4 & ydstogo <= 7 ~ "4-7 yards",  
+    ydstogo >= 8 & ydstogo <= 10 ~ "8-10 yards",           
+    ydstogo >= 11 ~ "11+ yards")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_ydstogo = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = ydstogo) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_ydstogo))
+
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
@@ -191,3 +204,5 @@ saveRDS(ttp, "Weekly_Bar_Graph_data_ttp.rds")
 saveRDS(ttpr, "Weekly_Bar_Graph_data_ttpr.rds")   
 
 saveRDS(downs, "Weekly_Bar_Graph_data_downs.rds")   
+
+saveRDS(ydstogo, "Weekly_Bar_Graph_data_ydstogo.rds")   
