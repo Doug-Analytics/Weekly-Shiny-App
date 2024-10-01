@@ -15,10 +15,25 @@ key <- Sys.getenv("API_KEY")  # Use the API key from the environment variable
 #key <- "bd99fcb1-bc62-4655-822c-9eb02d09d420"
 
 
-ftn_charts <- ftn_game_data(type = "charts", year = SEASON)
+ftn_charts <- ftn_game_data(type = "charts", year = SEASON) %>%
+  mutate(off = case_when(
+    off == "CLV" ~ "CLE",
+    off == "BLT" ~ "BAL",
+    off == "ARZ" ~ "ARI",
+    off == "HST" ~ "HOU",
+    TRUE ~ off
+  )) %>%
+  mutate(def = case_when(
+    def == "CLV" ~ "CLE",
+    def == "BLT" ~ "BAL",
+    def == "ARZ" ~ "ARI",
+    def == "HST" ~ "HOU",
+    TRUE ~ def
+  )) 
 
 ftn_plays <- ftn_game_data(type = "plays", year = SEASON)
 
+#ftn_participation <- ftn_game_data(type = "participation", year = SEASON) 
 
 url <- paste0("https://data.ftndata.com/games/", SEASON)
 req <- GET(url, add_headers(Authorization = key))
@@ -37,20 +52,6 @@ concept <- ftn_charts %>%
   left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
   left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
   filter(!is.na(concept), concept != "", concept != "Kneel", !is.na(off.x), !is.na(def.x)) %>%
-  mutate(off.x = case_when(
-    off.x == "CLV" ~ "CLE",
-    off.x == "BLT" ~ "BAL",
-    off.x == "ARZ" ~ "ARI",
-    off.x == "HST" ~ "HOU",
-    TRUE ~ off.x
-  )) %>%
-  mutate(def.x = case_when(
-    def.x == "CLV" ~ "CLE",
-    def.x == "BLT" ~ "BAL",
-    def.x == "ARZ" ~ "ARI",
-    def.x == "HST" ~ "HOU",
-    TRUE ~ def.x
-  )) %>%
   mutate(concept = case_when(
     concept == "Inside Zone" ~ "Inside Zone",  
     concept == "Outside Zone" ~ "Outside Zone",  
@@ -75,20 +76,6 @@ shell <- ftn_charts %>%
   left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
   left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
   filter(!is.na(shell), shell != "", !is.na(off.x), !is.na(def.x)) %>%
-  mutate(off.x = case_when(
-    off.x == "CLV" ~ "CLE",
-    off.x == "BLT" ~ "BAL",
-    off.x == "ARZ" ~ "ARI",
-    off.x == "HST" ~ "HOU",
-    TRUE ~ off.x
-  )) %>%
-  mutate(def.x = case_when(
-    def.x == "CLV" ~ "CLE",
-    def.x == "BLT" ~ "BAL",
-    def.x == "ARZ" ~ "ARI",
-    def.x == "HST" ~ "HOU",
-    TRUE ~ def.x
-  )) %>%
   mutate(shell = case_when(
     shell == 0 ~ "Cover 0",  
     shell == 1 ~ "Cover 1",  
@@ -107,6 +94,26 @@ shell <- ftn_charts %>%
   summarize(plays = n(),
             rate = plays/last(snaps_shell), .groups = "drop") 
 
+
+
+air_yards <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), !is.na(air_yards), pass == 1) %>%
+  mutate(air_yards_bracket = case_when(
+    air_yards <= 0 ~ "Behind LOS",  
+    air_yards >= 1 & air_yards <= 5 ~ "1-5",  
+    air_yards >= 6 & air_yards <= 10 ~ "6-10",  
+    air_yards >= 11 & air_yards <= 15 ~ "11-15",   
+    air_yards >= 16 & air_yards <= 20 ~ "16-20",            
+    air_yards >= 21 ~ "21+")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_air = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = air_yards_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_air))
+
+
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
+
+saveRDS(air_yards, "Weekly_Bar_Graph_data_air_yards.rds")
