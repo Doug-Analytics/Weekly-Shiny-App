@@ -170,6 +170,14 @@ ttpr <- ftn_charts %>%
   summarize(plays = n(),
             rate = plays/last(snaps_ttpr), .groups = "drop") 
 
+downs <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_down = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = down) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_down))
+
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
@@ -181,3 +189,5 @@ saveRDS(route, "Weekly_Bar_Graph_data_route.rds")
 saveRDS(ttp, "Weekly_Bar_Graph_data_ttp.rds")            
 
 saveRDS(ttpr, "Weekly_Bar_Graph_data_ttpr.rds")   
+
+saveRDS(downs, "Weekly_Bar_Graph_data_downs.rds")   
