@@ -94,8 +94,6 @@ shell <- ftn_charts %>%
   summarize(plays = n(),
             rate = plays/last(snaps_shell), .groups = "drop") 
 
-
-
 air_yards <- load_pbp(SEASON) %>%
   filter(!is.na(epa), !is.na(down), !is.na(air_yards), pass == 1) %>%
   mutate(air_yards_bracket = case_when(
@@ -111,9 +109,36 @@ air_yards <- load_pbp(SEASON) %>%
   reframe(plays = n(),
           rate = plays/last(snaps_air))
 
+route <- ftn_charts %>%
+  left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
+  left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
+  filter(!is.na(rte), rte != "", !is.na(off.x), !is.na(def.x)) %>%
+  mutate(rte = case_when(
+    rte == "0 - Screen" ~ "Screen",  
+    rte == "1 - Slant" ~ "Slant",  
+    rte == "2 - Quick Out" ~ "Quick Out",  
+    rte == "3 - Hitch/Curl" ~ "Hitch/Curl",   
+    rte == "4 - Deep Out" ~ "Deep Out",            
+    rte == "5 - In/Dig" ~ "In/Dig",  
+    rte == "6 - Corner" ~ "Corner",  
+    rte == "7 - Post" ~ "Post",
+    rte == "8 - Shallow Cross/Drag" ~ "Shallow Cross",            
+    rte == "9 - Go" ~ "Go",  
+    rte == "10 - Swing" ~ "Swing",  
+    rte == "11 - Texas/Angle" ~ "Texas/Angle",
+    rte == "12 - Wheel" ~ "Wheel")) %>%
+  group_by(seas, week, off.x) %>%
+  mutate(snaps_rte = n()) %>%
+  ungroup() %>%
+  group_by(seas, team = def.x, opp = off.x, week, category = rte) %>%
+  summarize(plays = n(),
+            rate = plays/last(snaps_rte), .groups = "drop") 
+
 
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
 
 saveRDS(air_yards, "Weekly_Bar_Graph_data_air_yards.rds")
+
+saveRDS(route, "Weekly_Bar_Graph_data_route.rds")
