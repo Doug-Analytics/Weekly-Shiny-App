@@ -210,7 +210,7 @@ run_gap <- load_pbp(SEASON) %>%
 play_action <- ftn_charts %>%
   left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
   left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
-  filter(type == "PASS", !is.na(off.x), !is.na(def.x)) %>%
+  filter(type.x == "PASS", !is.na(off.x), !is.na(def.x)) %>%
   mutate(play_action_bracket = case_when(
     pap == 1 ~ "Yes",
     TRUE ~ "No")) %>%
@@ -224,7 +224,7 @@ play_action <- ftn_charts %>%
 pressure_allowed <- ftn_charts %>%
   left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
   left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
-  filter(type == "PASS", !is.na(off.x), !is.na(def.x)) %>%
+  filter(type.x == "PASS", !is.na(off.x), !is.na(def.x)) %>%
   mutate(pressure_bracket = case_when(
     qbp == 1 ~ "Yes",
     TRUE ~ "No")) %>%
