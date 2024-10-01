@@ -207,6 +207,20 @@ run_gap <- load_pbp(SEASON) %>%
   reframe(plays = n(),
           rate = plays/last(snaps_run_gap))
 
+play_action <- ftn_charts %>%
+  left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
+  left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
+  filter(type == "PASS", !is.na(off.x), !is.na(def.x)) %>%
+  mutate(play_action_bracket = case_when(
+    pap == 1 ~ "Yes",
+    TRUE ~ "No")) %>%
+  group_by(seas, week, off.x) %>%
+  mutate(snaps_pap = n()) %>%
+  ungroup() %>%
+  group_by(seas, team = off.x, opp = def.x, week, category = play_action_bracket) %>%
+  summarize(plays = n(),
+            rate = plays/last(snaps_pap), .groups = "drop") 
+
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
@@ -224,3 +238,5 @@ saveRDS(downs, "Weekly_Bar_Graph_data_downs.rds")
 saveRDS(ydstogo, "Weekly_Bar_Graph_data_ydstogo.rds")   
 
 saveRDS(run_gap, "Weekly_Bar_Graph_data_run_gap.rds")   
+
+saveRDS(play_action, "Weekly_Bar_Graph_data_play_action.rds")   
