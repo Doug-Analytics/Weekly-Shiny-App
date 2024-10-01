@@ -191,6 +191,22 @@ ydstogo <- load_pbp(SEASON) %>%
   reframe(plays = n(),
           rate = plays/last(snaps_ydstogo))
 
+run_gap <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), rush == 1) %>%
+  mutate(run_gap_bracket = case_when(
+    run_location == "left" & run_gap == "end" ~ "left end",  
+    run_location == "left" & run_gap == "tackle" ~ "left tackle",  
+    run_location == "left" & run_gap == "guard" ~ "left guard",         
+    run_location == "right" & run_gap == "end" ~ "right end",  
+    run_location == "right" & run_gap == "tackle" ~ "right tackle",  
+    run_location == "right" & run_gap == "guard" ~ "right guard",      
+    run_location == "middle" ~ "middle")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_run_gap = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = run_gap_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_run_gap))
+
 saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
@@ -206,3 +222,5 @@ saveRDS(ttpr, "Weekly_Bar_Graph_data_ttpr.rds")
 saveRDS(downs, "Weekly_Bar_Graph_data_downs.rds")   
 
 saveRDS(ydstogo, "Weekly_Bar_Graph_data_ydstogo.rds")   
+
+saveRDS(run_gap, "Weekly_Bar_Graph_data_run_gap.rds")   
