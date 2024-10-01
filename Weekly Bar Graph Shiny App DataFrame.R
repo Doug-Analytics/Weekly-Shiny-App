@@ -180,4 +180,4 @@ saveRDS(route, "Weekly_Bar_Graph_data_route.rds")
 
 saveRDS(ttp, "Weekly_Bar_Graph_data_ttp.rds")            
 
-write.csv(ttpr, file = "Weekly_Bar_Graph_data_ttpr.csv")  
+saveRDS(ttpr, "Weekly_Bar_Graph_data_ttpr.rds")   
