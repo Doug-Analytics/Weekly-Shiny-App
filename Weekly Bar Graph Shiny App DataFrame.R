@@ -274,6 +274,21 @@ men_in_box <- ftn_charts %>%
   summarize(plays = n(),
             rate = plays/last(snaps_pass), .groups = "drop") 
 
+qb_pos <- ftn_charts %>%
+  left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
+  left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
+  filter(type.x == "PASS" | type.x == "RUSH", !is.na(off.x), !is.na(def.x)) %>%
+  mutate(qb_pos_bracket = case_when(
+    qb_pos == "U" ~ "Under Center",  
+    qb_pos == "S" ~ "Shotgun",  
+    qb_pos == "P" ~ "Pistol")) %>%
+  group_by(seas, week, off.x) %>%
+  mutate(snaps_play = n()) %>%
+  ungroup() %>%
+  group_by(seas, team = def.x, opp = off.x, week, category = qb_pos_bracket) %>%
+  summarize(plays = n(),
+            rate = plays/last(snaps_play), .groups = "drop") 
+
 saveRDS(concept, "Weekly_Bar_Graph_data_Run_Concepts.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_Shell_Coverages.rds")
@@ -299,3 +314,5 @@ saveRDS(pressure_allowed, "Weekly_Bar_Graph_data_Pressure_Allowed.rds")
 saveRDS(pass_rushers, "Weekly_Bar_Graph_data_Pass_Rushers.rds") 
 
 saveRDS(men_in_box, "Weekly_Bar_Graph_data_Men_in_Box.rds") 
+
+saveRDS(qb_pos, "Weekly_Bar_Graph_data_QB_Position.rds") 
