@@ -303,6 +303,21 @@ wp <- load_pbp(SEASON) %>%
   reframe(plays = n(),
           rate = plays/last(snaps_play))
 
+yards_gained <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  mutate(yards_gained_bracket = case_when(
+    yards_gained < 0 ~ "Loss of Yards",  
+    yards_gained >= 0 & yards_gained <= 3 ~ "0-3 yards",  
+    yards_gained > 3 & yards_gained <= 8 ~ "4-8 yards",           
+    yards_gained > 8 & yards_gained <= 12 ~ "9-12 yards",  
+    yards_gained > 12 & yards_gained <= 19 ~ "13-19 yards",            
+    yards_gained > 19 ~ "20+ yards")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_play = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = yards_gained_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_play))
+
 saveRDS(concept, "Weekly_Bar_Graph_data_Run_Concepts.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_Shell_Coverages.rds")
@@ -332,3 +347,5 @@ saveRDS(men_in_box, "Weekly_Bar_Graph_data_Men_in_Box.rds")
 saveRDS(qb_pos, "Weekly_Bar_Graph_data_QB_Position.rds") 
 
 saveRDS(wp, "Weekly_Bar_Graph_data_Win_Probability.rds") 
+
+saveRDS(yards_gained, "Weekly_Bar_Graph_data_Yards Gained.rds") 
