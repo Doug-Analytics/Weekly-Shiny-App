@@ -289,6 +289,20 @@ qb_pos <- ftn_charts %>%
   summarize(plays = n(),
             rate = plays/last(snaps_play), .groups = "drop") 
 
+wp <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  mutate(wp_bracket = case_when(
+    wp < 0.2 ~ "Less than 20%",  
+    wp >= 0.2 & wp < 0.4 ~ "20%-40%",  
+    wp >= 0.4 & wp < 0.6 ~ "40%-60%",           
+    wp >= 0.6 & wp < 0.8 ~ "60%-80%",  
+    wp >= 0.8 ~ "More than 80%")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_play = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = wp_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_play))
+
 saveRDS(concept, "Weekly_Bar_Graph_data_Run_Concepts.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_Shell_Coverages.rds")
@@ -316,3 +330,5 @@ saveRDS(pass_rushers, "Weekly_Bar_Graph_data_Pass_Rushers.rds")
 saveRDS(men_in_box, "Weekly_Bar_Graph_data_Men_in_Box.rds") 
 
 saveRDS(qb_pos, "Weekly_Bar_Graph_data_QB_Position.rds") 
+
+saveRDS(wp, "Weekly_Bar_Graph_data_Win_Probability.rds") 
