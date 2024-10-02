@@ -269,28 +269,28 @@ men_in_box <- ftn_charts %>%
   summarize(plays = n(),
             rate = plays/last(snaps_pass), .groups = "drop") 
 
-saveRDS(concept, "Weekly_Bar_Graph_data_concept.rds")
+saveRDS(concept, "Weekly_Bar_Graph_data_Run_Concepts.rds")
 
-saveRDS(shell, "Weekly_Bar_Graph_data_shell.rds")
+saveRDS(shell, "Weekly_Bar_Graph_data_Shell_Coverages.rds")
 
-saveRDS(air_yards, "Weekly_Bar_Graph_data_air_yards.rds")
+saveRDS(air_yards, "Weekly_Bar_Graph_data_Air_Yard_Buckets.rds")
 
-saveRDS(route, "Weekly_Bar_Graph_data_route.rds")
+saveRDS(route, "Weekly_Bar_Graph_data_Targeted_Routes.rds")
 
-saveRDS(ttp, "Weekly_Bar_Graph_data_ttp.rds")            
+saveRDS(ttp, "Weekly_Bar_Graph_data_Time_to_Pass.rds")            
 
-saveRDS(ttpr, "Weekly_Bar_Graph_data_ttpr.rds")   
+saveRDS(ttpr, "Weekly_Bar_Graph_data_Time_to_Pressure.rds")   
 
-saveRDS(downs, "Weekly_Bar_Graph_data_downs.rds")   
+saveRDS(downs, "Weekly_Bar_Graph_data_Downs.rds")   
 
-saveRDS(ydstogo, "Weekly_Bar_Graph_data_ydstogo.rds")   
+saveRDS(ydstogo, "Weekly_Bar_Graph_data_Yards_to_Go.rds")   
 
-saveRDS(run_gap, "Weekly_Bar_Graph_data_run_gap.rds")   
+saveRDS(run_gap, "Weekly_Bar_Graph_data_Run_Gap.rds")   
 
-saveRDS(play_action, "Weekly_Bar_Graph_data_play_action.rds")   
+saveRDS(play_action, "Weekly_Bar_Graph_data_Play_Action.rds")   
 
-saveRDS(pressure_allowed, "Weekly_Bar_Graph_data_pressure_allowed.rds")   
+saveRDS(pressure_allowed, "Weekly_Bar_Graph_data_Pressure_Allowed.rds")   
 
-saveRDS(pass_rushers, "Weekly_Bar_Graph_data_pass_rushers.rds") 
+saveRDS(pass_rushers, "Weekly_Bar_Graph_data_Pass_Rushers.rds") 
 
-saveRDS(men_in_box, "Weekly_Bar_Graph_data_men_in_box.rds") 
+saveRDS(men_in_box, "Weekly_Bar_Graph_data_Men_in_Box.rds") 
