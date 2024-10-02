@@ -172,6 +172,11 @@ ttpr <- ftn_charts %>%
 
 downs <- load_pbp(SEASON) %>%
   filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  mutate(down = case_when(
+    down == 1 ~ "1st",  
+    down == 2 ~ "2nd",    
+    down == 3 ~ "3rd",  
+    down == 4 ~ "4th")) %>%
   group_by(season, posteam, week) %>%
   mutate(snaps_down = n()) %>%
   group_by(seas = season, team = posteam, opp = defteam, week, category = down) %>%
@@ -200,7 +205,7 @@ run_gap <- load_pbp(SEASON) %>%
     run_location == "right" & run_gap == "end" ~ "right end",  
     run_location == "right" & run_gap == "tackle" ~ "right tackle",  
     run_location == "right" & run_gap == "guard" ~ "right guard",      
-    run_location == "middle" ~ "middle")) %>%
+    TRUE ~ "middle")) %>%
   group_by(season, posteam, week) %>%
   mutate(snaps_run_gap = n()) %>%
   group_by(seas = season, team = posteam, opp = defteam, week, category = run_gap_bracket) %>%
