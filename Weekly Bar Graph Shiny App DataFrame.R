@@ -10,7 +10,7 @@ options(scipen = 9999)
 source("ftn_functions.R")
 
 
-SEASON <- 2024
+SEASON <- get_current_season()
 key <- Sys.getenv("API_KEY")  # Use the API key from the environment variable
 #key <- "bd99fcb1-bc62-4655-822c-9eb02d09d420"
 
@@ -192,7 +192,7 @@ ydstogo <- load_pbp(SEASON) %>%
     ydstogo >= 11 ~ "11+ yards")) %>%
   group_by(season, posteam, week) %>%
   mutate(snaps_ydstogo = n()) %>%
-  group_by(seas = season, team = posteam, opp = defteam, week, category = ydstogo) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = ydstogo_bracket) %>%
   reframe(plays = n(),
           rate = plays/last(snaps_ydstogo))
 
@@ -322,7 +322,7 @@ saveRDS(concept, "Weekly_Bar_Graph_data_Run_Concepts.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_Shell_Coverages.rds")
 
-saveRDS(air_yards, "Weekly_Bar_Graph_data_Air_Yard_Buckets.rds")
+saveRDS(air_yards, "Weekly_Bar_Graph_data_Air_Yards.rds")
 
 saveRDS(route, "Weekly_Bar_Graph_data_Targeted_Routes.rds")
 
