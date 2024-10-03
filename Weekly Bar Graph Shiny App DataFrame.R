@@ -277,7 +277,7 @@ men_in_box <- ftn_charts %>%
 qb_pos <- ftn_charts %>%
   left_join(ftn_plays, by = c("gid", "pid"), relationship = "many-to-many") %>%
   left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
-  filter(type.x == "PASS" | type.x == "RUSH", !is.na(qb_pos), !is.na(off.x), !is.na(def.x)) %>%
+  filter(type.x == "PASS" | type.x == "RUSH", qb_pos != "", !is.na(qb_pos), !is.na(off.x), !is.na(def.x)) %>%
   mutate(qb_pos_bracket = case_when(
     qb_pos == "U" ~ "Under Center",  
     qb_pos == "S" ~ "Shotgun",  
