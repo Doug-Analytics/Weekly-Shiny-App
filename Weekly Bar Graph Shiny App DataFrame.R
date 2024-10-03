@@ -199,13 +199,13 @@ ydstogo <- load_pbp(SEASON) %>%
 run_gap <- load_pbp(SEASON) %>%
   filter(!is.na(epa), !is.na(down), rush == 1) %>%
   mutate(run_gap_bracket = case_when(
-    run_location == "left" & run_gap == "end" ~ "left end",  
-    run_location == "left" & run_gap == "tackle" ~ "left tackle",  
-    run_location == "left" & run_gap == "guard" ~ "left guard",         
-    run_location == "right" & run_gap == "end" ~ "right end",  
-    run_location == "right" & run_gap == "tackle" ~ "right tackle",  
-    run_location == "right" & run_gap == "guard" ~ "right guard",      
-    TRUE ~ "middle")) %>%
+    run_location == "left" & run_gap == "end" ~ "Left End",  
+    run_location == "left" & run_gap == "tackle" ~ "Left Tackle",  
+    run_location == "left" & run_gap == "guard" ~ "Left Guard",         
+    run_location == "right" & run_gap == "end" ~ "Right End",  
+    run_location == "right" & run_gap == "tackle" ~ "Right Tackle",  
+    run_location == "right" & run_gap == "guard" ~ "Right Guard",      
+    TRUE ~ "Middle")) %>%
   group_by(season, posteam, week) %>%
   mutate(snaps_run_gap = n()) %>%
   group_by(seas = season, team = posteam, opp = defteam, week, category = run_gap_bracket) %>%
