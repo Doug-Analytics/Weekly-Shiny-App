@@ -304,10 +304,11 @@ wp <- load_pbp(SEASON) %>%
           rate = plays/last(snaps_play))
 
 yards_gained <- load_pbp(SEASON) %>%
-  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1, !is.na(yards_gained)) %>%
   mutate(yards_gained_bracket = case_when(
-    yards_gained < 0 ~ "Loss of Yards",  
-    yards_gained >= 0 & yards_gained <= 3 ~ "0-3 yards",  
+    yards_gained < 0 ~ "Loss of yards",  
+    yards_gained == 0 ~ "No Gain",  
+    yards_gained > 0 & yards_gained <= 3 ~ "1-3 yards",  
     yards_gained > 3 & yards_gained <= 8 ~ "4-8 yards",           
     yards_gained > 8 & yards_gained <= 12 ~ "9-12 yards",  
     yards_gained > 12 & yards_gained <= 19 ~ "13-19 yards",            
