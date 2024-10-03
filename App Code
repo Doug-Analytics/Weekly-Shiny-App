@@ -1,0 +1,380 @@
+library(tidyverse)
+library(nflverse)
+library(magick)
+library(shiny)
+library(ggplot2)
+library(ggrepel)
+library(cowplot)
+library(grid)
+library(htmltools)
+library(ggtext)
+library(shinythemes)
+library(shinycssloaders)
+options(scipen = 9999)
+
+#setwd("G:/My Drive/Giants/Code/Weekly Shiny App")
+
+url <- "https://i.imgur.com/KkChzbk.png"
+image <- image_read(url)
+
+ftn_url <- "https://i.imgur.com/vrzsyOd.png"
+ftn_logo <- image_read(ftn_url)
+
+ui <- fluidPage(
+  
+  theme = shinytheme("spacelab"),
+  
+  tags$head(tags$title("DOUG: Data-Oriented Understanding of Gameplays")),
+  
+  titlePanel(
+    HTML("<b>DOUG</b>: <b>D</b>ata-<b>O</b>riented <b>U</b>nderstanding of <b>G</b>ameplays")
+  ),
+  tags$head(
+    tags$link(rel = "stylesheet", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+  ),
+  
+  tags$head(
+    tags$link(rel = "shortcut icon", href = "https://i.imgur.com/KkChzbk.png")
+  ),
+  tags$a(
+    href = "https://ftnfantasy.com/nfl/stats", 
+    target = "_blank",
+    style = "display: block; width: 30%; padding: 10px; background-color: #003098; color: white; text-decoration: none; border-radius: 10px; text-align: center;",
+    tags$i(class = "fas fa-chart-line", style = "margin-right: 8px; font-size: 16px; vertical-align: left;"),
+    "FTN Data StatsHub"
+  ),
+  sidebarLayout(
+    sidebarPanel(
+      
+      selectInput("team",
+                  "Team:",
+                  choices = c("ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE", "DAL", "DEN", 
+                              "DET", "GB", "HOU", "IND", "JAX", "KC", "LA", "LAC", "LV", "MIA", 
+                              "MIN", "NE", "NO", "NYG", "NYJ", "PHI", "PIT", "SEA", "SF", "TB", 
+                              "TEN", "WAS"),
+                  selected = "NYG"),
+      
+      selectInput("y_axis",
+                  "Data:",
+                  choices = list("Passing Offense" = c("Air Yards", "Targeted Routes", "Time to Pass", "Play Action", "Pressure Allowed"),
+                                 "Rushing Offense" = c("Run Concepts", "Run Gap"),
+                                 "General Offense" = c("Downs", "QB Position", "Win Probability", "Yards Gained", "Yards to Go"),
+                                 "Defense" = c("Shell Coverages", "Time to Pressure", "Pass Rushers", "Men in Box")),
+                  selected = "Air Yards"),
+      
+      
+      
+      sliderInput("week_range",
+                  "Week Range:",
+                  min = 1, max = get_current_week(),
+                  value = c(1, 18),
+                  step = 1,
+                  sep = ""),
+      
+      textInput("title", "Custom Plot Title:"),
+      
+      checkboxInput("team_logos", "Display Team Logos? (~10s)", TRUE),
+      checkboxInput("scores_checkbox", "Display Scores?", TRUE),
+      
+      downloadButton('downloadPlot', 'Download Chart'),
+      
+    ),
+    
+    mainPanel(
+      withSpinner(plotOutput("plot", width = "100%", height = "58vh"), 
+                  type = 1, hide.ui = FALSE, size = 1, color = "grey")
+    )
+  )
+)
+################################################################################
+
+server <- function(input, output, session) {
+  
+  # Reactive function to load data based on input$y_axis
+  selected_data <- reactive({
+    # Replace spaces with underscores in the user selection
+    formatted_selection <- gsub(" ", "_", input$y_axis)
+    
+    # Construct the full URL
+    url <- paste0("https://github.com/Doug-Analytics/Weekly-Shiny-App/raw/main/", 
+                  "Weekly_Bar_Graph_data_", formatted_selection, ".rds")
+    
+    # Load and return the data
+    return(readRDS(gzcon(url(url))))
+  })
+  
+  
+  SEASON <- get_current_season()
+  
+  scores <-  reactive({
+    load_schedules(season = SEASON) %>%
+      filter(home_team == input$team | away_team == input$team) %>%
+      mutate(
+        result = case_when(
+          home_team == input$team & home_score > away_score ~ "W",
+          away_team == input$team & away_score > home_score ~ "W",
+          home_team == input$team & home_score < away_score ~ "L",
+          away_team == input$team & away_score < home_score ~ "L",
+          TRUE ~ "T")) %>%
+      mutate(score_text = paste(home_score, "-", away_score, sep = "")) %>%
+      select(week, home_team, home_score, away_team, away_score, result, score_text)
+  })
+  
+  
+  teams <- load_teams() %>%
+    select(team_abbr, team_name, team_color, team_color2, team_color3, team_division, team_logo_espn)
+  
+  
+  data <- reactive({
+    selected_data() %>%
+      filter(week >= input$week_range[1], week <= input$week_range[2]) %>%
+      filter(team == input$team) %>%
+      group_by(category) %>%
+      mutate(avg_rate = mean(rate), .groups = "drop") %>%
+      ungroup() %>%
+      arrange(-avg_rate) %>%
+      mutate(rate2 = paste(format(round(rate*100, 0), nsmall = 0), "%", sep = "")) %>%
+      left_join(teams, by = c("team" = "team_abbr")) %>%
+      left_join(scores(), by = c("week" = "week")) 
+  })
+  
+  
+  total_rate <- reactive({
+    data() %>%
+      group_by(category) %>%
+      summarize(total_rate = sum(rate)) %>%
+      arrange(desc(total_rate))
+  })
+  
+  
+  text_size <- reactive({
+    data() %>%
+      mutate(week_count = input$week_range[2] - input$week_range[1]) %>%
+      mutate(label_size = case_when(
+        week_count <= 5 ~ 1,
+        week_count <= 10 ~ 0.8,
+        week_count <= 15 ~ 0.7,
+        TRUE ~ 0.6
+      ))
+  })
+  
+  selected_team <- reactive({
+    teams %>%
+      filter(team_abbr == input$team)
+  })
+  
+  
+  # Define a list of colors
+  custom_colors <- c(
+    "Power" = "#7f8ee6",  
+    "Cover 6" = "#7f8ee6",       
+    "Behind LOS" = "#7f8ee6",  
+    "Less than 1s" = "#7f8ee6",
+    "Less than 1.5s" = "#7f8ee6",
+    "1-3 yards" = "#7f8ee6",
+    "Left End" = "#7f8ee6",  
+    "Inside Zone" = "#8cccf5",  
+    "Cover 1" = "#8cccf5",       
+    "1-5" = "#8cccf5", 
+    "1s-1.5s" = "#8cccf5", 
+    "1st" = "#8cccf5", 
+    "1.5s-2.0s" = "#8cccf5", 
+    "4-7 yards" = "#8cccf5", 
+    "Left Tackle" = "#8cccf5",
+    "Yes" = "#8cccf5",  
+    "Under Center" = "#8cccf5",  
+    "Outside Zone" = "#fcd757",  
+    "Cover 3" = "#fcd757",       
+    "6-10" = "#fcd757",  
+    "1.6s-2s" = "#fcd757",  
+    "2.1s-2.5s" = "#fcd757", 
+    "8-10 yards" = "#fcd757", 
+    "40%-60%" = "#fcd757", 
+    "Middle" = "#fcd757",
+    "Shotgun" = "#fcd757",
+    "Man/Duo" = "#a7d18c", 
+    "Cover 2" = "#a7d18c",      
+    "11-15" = "#a7d18c",
+    "2.1s-3s" = "#a7d18c",
+    "2.5s-3s" = "#a7d18c",
+    "2nd" = "#a7d18c", 
+    "Right End" = "#a7d18c", 
+    "Pistol" = "#a7d18c",
+    "Trap" = "#fcb07e",      
+    "Cover 4" = "#fcb07e",       
+    "16-20" = "#fcb07e",
+    "3.1s-4s" = "#fcb07e",
+    "11+ yards" = "#fcb07e",
+    "3rd" = "#fcb07e",
+    "Right Tackle" = "#fcb07e",
+    "Counter" = "#b851a0",  
+    "Cover 0" = "#b851a0",       
+    "21+" = "#b851a0", 
+    "Longer than 4s" = "#b851a0", 
+    "4th" = "#b851a0",
+    "Right Guard" = "#b851a0", 
+    "Draw" = "#fda0cc",
+    "Cover 9" = "#fda0cc",  
+    "Left Guard" = "#fda0cc", 
+    "QB Sneak" = "gray80",
+    "No" = "gray80",
+    "WR/FB Run" = "#5eac85",
+    "Cover 2 Man" = "#5eac85",   
+    "Other" = "gray50",
+    "Screen" = "#1F83B4FF",  
+    "Slant" = "#12A2A8FF",  
+    "20+ yards" = "#12A2A8FF",  
+    "Quick Out" = "#2CA030FF",  
+    "Hitch/Curl" = "#78A641FF",   
+    "3 or Fewer" = "#78A641FF",  
+    "More than 80%" = "#78A641FF",
+    "13-19 yards" = "#78A641FF",
+    "Deep Out" = "#BCBD22FF",  
+    "4" = "#BCBD22FF", 
+    "60%-80%" = "#BCBD22FF", 
+    "9-12 yards" = "#BCBD22FF", 
+    "In/Dig" = "#FFBF50FF",  
+    "5" = "#FFBF50FF",
+    "5 or Fewer" = "#FFBF50FF",  
+    "Corner" = "#FFAA0EFF", 
+    "6" = "#FFAA0EFF",
+    "4-8 yards" = "#FFAA0EFF",
+    "Post" = "#FF7F0EFF",
+    "7 or More" = "#FF7F0EFF",
+    "7" = "#FF7F0EFF",
+    "20%-40%" = "#FF7F0EFF",
+    "0-3 Yards" = "#FF7F0EFF",
+    "No Gain" = "#FF7F0EFF",
+    "Shallow Cross" = "#D63A3AFF",    
+    "8" = "#D63A3AFF", 
+    "Less than 20%" = "#D63A3AFF",  
+    "Loss of yards" = "#D63A3AFF",   
+    "Go" = "#C7519CFF",  
+    "9 or More" = "#C7519CFF",  
+    "Swing" = "#BA43B4FF",  
+    "Texas/Angle" = "#8A60B0FF",
+    "Wheel" = "#6F63BBFF"
+  )
+  
+  
+  # Find the color corresponding to each team in opp
+  team_colors <- reactive({
+    # Get team colors in the same order as opp
+    color_vector <- teams$team_color[match(data()$opp, teams$team_abbr)]
+    names(color_vector) <- data()$opp
+    color_vector
+  })
+  
+  
+  
+  
+  # Define the main reactive plot function
+  p <- reactive({
+    p_plot <- ggplot(data = data(), aes(
+      x = week, 
+      y = rate, 
+      fill = fct_reorder(category, -total_rate()$total_rate[match(category, total_rate()$category)], .desc = TRUE), 
+      label = rate2)) +
+      scale_fill_manual(values = custom_colors) +
+      geom_col() +
+      geom_text(size = text_size()$label_size * ifelse(data()$rate >= 0.30, 5, 
+                                                       ifelse(data()$rate >= 0.15, 4, 
+                                                              ifelse(data()$rate >= 0.02, 3, 2))), 
+                position = position_stack(vjust = 0.5)) +
+      scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(ifelse(input$scores_checkbox, -0.13, -0.05), 1)) +
+      scale_x_continuous(breaks = seq(1, input$week_range[2] + 1, by = 1))
+    
+    if (input$team_logos) {
+      p_plot <- p_plot + geom_nfl_logos(
+        aes(team_abbr = opp, y = -0.04),
+        width = 0.04)
+    } else {
+      p_plot <- p_plot + geom_text(
+        aes(x = week, y = -0.04, label = opp, color = opp),
+        size = 3, alpha = 1, show.legend = FALSE) +
+        scale_color_manual(values = team_colors())
+    }
+    
+    p_plot <- p_plot + labs(
+      title = ifelse(nchar(input$title) > 0, input$title, paste0(selected_team()$team_name, " ", input$y_axis)),
+      subtitle = paste(SEASON, " | Weeks", min(data()$week), "-", max(data()$week)),
+      x = "Week", 
+      y = "Play Percentage",
+      caption = "Chart: @Doug_Analytics | Data: FTN"
+    ) +
+      guides(
+        fill = guide_legend(title = "<span style='color: royalblue3;'>Doug-Analytics.shinyapps.io/DOUGG</span>")
+      )
+    
+    if (input$scores_checkbox) {
+      p_plot <- p_plot +
+        geom_text(data = data(), aes(x = week, y = -0.10, label = result), size = 3, hjust = 0.5, vjust = 1, 
+                  color = ifelse(data()$result == "W", "#0072B2", "#D55E00")) +
+        geom_text(data = data(), aes(x = week, y = -0.13, label = score_text), size = 3, hjust = 0.5, vjust = 1, 
+                  color = ifelse(data()$result == "W", "#0072B2", "#D55E00"))
+    }
+    
+    p_plot + theme(
+      plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+      plot.subtitle = element_text(size = 11, face = "italic", hjust = 0.5),
+      axis.title = element_text(size = 14, hjust = 0.5),
+      axis.text = element_text(size = 12),
+      legend.title = element_markdown(size = 6),
+      legend.text = element_text(size = 12),
+      legend.background = element_rect(fill = "grey96", colour = NA),
+      legend.position = "right",
+      plot.caption = element_text(size = 8, color = "grey20", hjust = 1, face = "bold"),
+      panel.border = element_blank(),
+      panel.background = element_rect(fill = "grey98", colour = NA),
+      plot.background = element_rect(fill = "grey96", colour = NA),
+      panel.grid.major = element_line(colour = "grey98"),
+      panel.grid.minor = element_line(colour = "grey98"),
+      axis.line.x.top = element_line(linewidth = 1, colour = "grey98"),
+      axis.line.y.right = element_line(linewidth = 1, colour = "grey98"),
+      axis.line.x.bottom = element_line(linewidth = 1, colour = "black"),
+      axis.line.y.left = element_line(linewidth = 1, colour = "black")
+    )
+  })
+  
+  # Render plot for UI
+  output$plot <- renderPlot({
+    p_plot <- ggdraw() +
+      draw_plot(p()) +
+      draw_image(ftn_logo, x = 0.88, y = 0.86, width = 0.11, height = 0.11, clip = "off")
+    
+    # Conditionally add the team logo to the plot
+    if (input$team_logos) {
+      p_plot <- p_plot +
+        draw_image(selected_team()$team_logo_espn, x = 0.00, y = 0.88, width = 0.12, height = 0.12, clip = "off")
+    }
+    
+    # Add any other images as necessary
+    p_plot
+  })
+  
+  # Download handler using the same plot with images
+  output$downloadPlot <- downloadHandler(
+    filename = function() {
+      paste0(input$y_axis, "_", input$team, "_Weeks_", min(data()$week), "-", max(data()$week), ".png")
+    },
+    content = function(file) {
+      #      # Create the plot with images
+      #      p_plot <- ggdraw() +
+      #        draw_plot(p()) +  # Use the reactive plot directly
+      #        draw_image(ftn_logo, x = 0.88, y = 0.86, width = 0.11, height = 0.11, clip = "off")
+      #      
+      #      # Conditionally add the team logo to the plot
+      #      if (input$team_logos) {
+      #        p_plot <- p_plot +
+      #          draw_image(selected_team()$team_logo_espn, x = 0.00, y = 0.88, width = 0.12, height = 0.12, clip = "off")
+      #      }
+      
+      # Save the plot to the specified file
+      ggsave(file, width = 12, height = 7, dpi = 300)
+    }
+  )
+  
+  
+}
+
+shinyApp(ui = ui, server = server)
