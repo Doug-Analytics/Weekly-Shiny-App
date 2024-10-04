@@ -262,11 +262,11 @@ men_in_box <- ftn_charts %>%
   left_join(ftn_games, by = "gid", relationship = "many-to-many") %>%
   filter(type.x == "PASS" | type.x == "RUSH", !is.na(off.x), !is.na(def.x)) %>%
   mutate(men_in_box_bracket = case_when(
-    box <= 5 ~ "5 or Fewer",  
-    box == 6 ~ "6",  
-    box == 7 ~ "7", 
-    box == 8 ~ "8",          
-    box >= 9 ~ "9 or More")) %>%
+    box <= 5 ~ "5 or Fewer ",  
+    box == 6 ~ "6 ",  
+    box == 7 ~ "7 ", 
+    box == 8 ~ "8 ",          
+    box >= 9 ~ "9 or More ")) %>%
   group_by(seas, week, def.x) %>%
   mutate(snaps_pass = n()) %>%
   ungroup() %>%
