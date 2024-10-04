@@ -306,13 +306,13 @@ wp <- load_pbp(SEASON) %>%
 yards_gained <- load_pbp(SEASON) %>%
   filter(!is.na(epa), !is.na(down), pass + rush == 1, !is.na(yards_gained)) %>%
   mutate(yards_gained_bracket = case_when(
-    yards_gained < 0 ~ "Loss of yards",  
-    yards_gained == 0 ~ "No Gain",  
-    yards_gained > 0 & yards_gained <= 3 ~ "1-3 yards",  
-    yards_gained > 3 & yards_gained <= 8 ~ "4-8 yards",           
-    yards_gained > 8 & yards_gained <= 12 ~ "9-12 yards",  
-    yards_gained > 12 & yards_gained <= 19 ~ "13-19 yards",            
-    yards_gained > 19 ~ "20+ yards")) %>%
+    yards_gained < 0 ~ "Loss of yards ",  
+    yards_gained == 0 ~ "No Gain ",  
+    yards_gained > 0 & yards_gained <= 3 ~ "1-3 yards ",  
+    yards_gained > 3 & yards_gained <= 8 ~ "4-8 yards ",           
+    yards_gained > 8 & yards_gained <= 12 ~ "9-12 yards ",  
+    yards_gained > 12 & yards_gained <= 19 ~ "13-19 yards ",            
+    yards_gained > 19 ~ "20+ yards ")) %>%
   group_by(season, posteam, week) %>%
   mutate(snaps_play = n()) %>%
   group_by(seas = season, team = posteam, opp = defteam, week, category = yards_gained_bracket) %>%
@@ -350,3 +350,35 @@ saveRDS(qb_pos, "Weekly_Bar_Graph_data_QB_Position.rds")
 saveRDS(wp, "Weekly_Bar_Graph_data_Win_Probability.rds") 
 
 saveRDS(yards_gained, "Weekly_Bar_Graph_data_Yards_Gained.rds") 
+
+
+
+fun <- load_schedules() %>%
+  filter(season >= 2017) %>%
+  filter(spread_line >= 4 | spread_line <= -4) %>%
+  mutate(
+    winner = case_when(
+      home_score > away_score ~ home_team,
+      away_score > home_score ~ away_team,
+      TRUE ~ "tie"  # Use TRUE instead of 'otherwise'
+    ),
+    loser = case_when(
+      home_score < away_score ~ home_team,
+      away_score < home_score ~ away_team,
+      TRUE ~ "tie"  # Use TRUE instead of 'otherwise'
+    ),
+    exp_loser = case_when(
+      home_moneyline > away_moneyline ~ home_team,
+      TRUE ~ away_team  # Use TRUE instead of 'otherwise'
+    ),
+    exp_winner = case_when(
+      home_moneyline < away_moneyline ~ home_team,
+      TRUE ~ away_team  # Use TRUE instead of 'otherwise'
+    )
+  ) %>%
+  group_by(team = exp_loser) %>%
+  reframe(wins = sum(team == winner, na.rm = T),
+          games = sum(ifelse(exp_loser == team | exp_winner == team, 1, 0), na.rm = T),
+          win_rate = wins / games)
+  
+  
