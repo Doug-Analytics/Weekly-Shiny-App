@@ -125,6 +125,9 @@ server <- function(input, output, session) {
     select(team_abbr, team_name, team_color, team_color2, team_color3, team_division, team_logo_espn)
   
   
+  
+  
+  # Main reactive data
   data <- reactive({
     selected_data() %>%
       filter(week >= input$week_range[1], week <= input$week_range[2]) %>%
@@ -132,19 +135,50 @@ server <- function(input, output, session) {
       group_by(category) %>%
       mutate(avg_rate = mean(rate), .groups = "drop") %>%
       ungroup() %>%
-      arrange(-avg_rate) %>%
+      arrange(avg_rate) %>%
       mutate(rate2 = paste(format(round(rate*100, 0), nsmall = 0), "%", sep = "")) %>%
       left_join(teams, by = c("team" = "team_abbr")) %>%
-      left_join(scores(), by = c("week" = "week")) 
+      left_join(scores(), by = c("week" = "week"))
   })
   
-  
+  # Reactive to compute total rates
   total_rate <- reactive({
     data() %>%
       group_by(category) %>%
       summarize(total_rate = sum(rate)) %>%
       arrange(desc(total_rate))
   })
+  
+  # Custom ordering function
+  custom_ordering <- function(category) {
+    case_when(
+      category %in% c("21+", "16-20", "11-15", "6-10", "1-5", "Behind LOS") ~ factor(category, levels = c("21+", "16-20", "11-15", "6-10", "1-5", "Behind LOS")),
+      category %in% c("Longer than 4s", "3.1s-4s", "2.1s-3s", "1.6s-2s", "1s-1.5s", "Less than 1s") ~ factor(category, levels = c("Longer than 4s", "3.1s-4s", "2.1s-3s", "1.6s-2s", "1s-1.5s", "Less than 1s")),
+      category %in% c("Longer than 4s", "3.1s-4s", "2.5s-3s", "2.1s-2.5s", "1.5s-2.0s", "Less than 1.5s") ~ factor(category, levels = c("Longer than 4s", "3.1s-4s", "2.5s-3s", "2.1s-2.5s", "1.5s-2.0s", "Less than 1.5s")),
+      category %in% c("11+ yards", "8-10 yards", "4-7 yards", "1-3 yards") ~ factor(category, levels = c("11+ yards", "8-10 yards", "4-7 yards", "1-3 yards")),
+      category %in% c("7 or More", "6", "5", "4", "3 or Fewer") ~ factor(category, levels = c("7 or More", "6", "5", "4", "3 or Fewer")),
+      category %in% c("9 or More", "8", "7", "6", "5 or Fewer") ~ factor(category, levels = c("9 or More", "8", "7", "6", "5 or Fewer")),
+      category %in% c("More than 80%", "60%-80%", "40%-60%", "20%-40%", "Less than 20%") ~ factor(category, levels = c("More than 80%", "60%-80%", "40%-60%", "20%-40%", "Less than 20%")),
+      category %in% c("20+ yards", "13-19 yards", "9-12 yards", "4-8 yards", "1-3 yards", "No Gain", "Loss of yards") ~ factor(category, levels = c("20+ yards", "13-19 yards", "9-12 yards", "4-8 yards", "1-3 yards", "No Gain", "Loss of yards")),
+      TRUE ~ factor(category, levels = unique(category))  # Use unique category as default levels
+    )
+  }
+  
+  
+  # Apply custom ordering to the data
+  # Apply custom ordering to the data
+  data_ordered <- reactive({
+    data() %>%
+      mutate(category = case_when(
+        input$y_axis %in% c("Air Yards", "Time to Pass", "Win Probability", 
+                            "Yards Gained", "Yards to Go", "Time to Pressure", 
+                            "Pass Rushers", "Men in Box") ~ custom_ordering(as.factor(category)),
+        TRUE ~ fct_reorder(as.factor(category), total_rate()$total_rate[match(category, total_rate()$category)], .desc = TRUE)  
+      )) %>%
+      arrange(category)  # Ensure the data is arranged in the order of the category
+  })
+  
+  
   
   
   text_size <- reactive({
@@ -270,16 +304,16 @@ server <- function(input, output, session) {
   
   # Define the main reactive plot function
   p <- reactive({
-    p_plot <- ggplot(data = data(), aes(
+    p_plot <- ggplot(data = data_ordered(), aes(
       x = week, 
       y = rate, 
-      fill = fct_reorder(category, -total_rate()$total_rate[match(category, total_rate()$category)], .desc = TRUE), 
+      fill = category,
       label = rate2)) +
       scale_fill_manual(values = custom_colors) +
       geom_col() +
-      geom_text(size = text_size()$label_size * ifelse(data()$rate >= 0.30, 5, 
-                                                       ifelse(data()$rate >= 0.15, 4, 
-                                                              ifelse(data()$rate >= 0.02, 3, 2))), 
+      geom_text(size = text_size()$label_size * ifelse(data_ordered()$rate >= 0.30, 5, 
+                                                       ifelse(data_ordered()$rate >= 0.15, 4, 
+                                                              ifelse(data_ordered()$rate >= 0.02, 3, 2))), 
                 position = position_stack(vjust = 0.5)) +
       scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(ifelse(input$scores_checkbox, -0.13, -0.05), 1)) +
       scale_x_continuous(breaks = seq(1, input$week_range[2] + 1, by = 1))
@@ -297,7 +331,7 @@ server <- function(input, output, session) {
     
     p_plot <- p_plot + labs(
       title = ifelse(nchar(input$title) > 0, input$title, paste0(selected_team()$team_name, " ", input$y_axis)),
-      subtitle = paste(SEASON, " | Weeks", min(data()$week), "-", max(data()$week)),
+      subtitle = paste(SEASON, " | Weeks", min(data()$week), "-", max(data_ordered()$week)),
       x = "Week", 
       y = "Play Percentage",
       caption = "Chart: @Doug_Analytics | Data: FTN"
