@@ -285,7 +285,7 @@ qb_pos <- ftn_charts %>%
   group_by(seas, week, off.x) %>%
   mutate(snaps_play = n()) %>%
   ungroup() %>%
-  group_by(seas, team = def.x, opp = off.x, week, category = qb_pos_bracket) %>%
+  group_by(seas, team = off.x, opp = def.x, week, category = qb_pos_bracket) %>%
   summarize(plays = n(),
             rate = plays/last(snaps_play), .groups = "drop") 
 
