@@ -392,3 +392,18 @@ rush_sr <- load_pbp(2024) %>%
 
 
 write.csv(rush_sr, "rush_sr.csv", row.names = FALSE)
+
+
+
+
+
+fun <- load_pbp(2020:2024) %>%
+  filter(!is.na(epa), !is.na(down), pass+rush == 1) %>%
+  filter(yardline_100 >= 40, yardline <= 60, ydstogo <= 10) %>%
+  group_by(down, ydstogo) %>%
+  reframe(plays = n(),
+          avg_ep = mean(ep),
+          avp_wp = mean(wp))
+
+
+write.csv(fun, "fun.csv", row.names = FALSE)
