@@ -391,4 +391,4 @@ rush_sr <- load_pbp(2024) %>%
           sr = mean(ifelse(epa > 0, 1, 0)))
 
 
-saveCSV(rush_sr, "rush_sr.csv") 
+write.csv(rush_sr, "rush_sr.csv", row.names = FALSE)
