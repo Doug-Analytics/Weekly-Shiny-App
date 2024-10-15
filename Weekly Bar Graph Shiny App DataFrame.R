@@ -387,7 +387,7 @@ rush_sr <- load_pbp(2024) %>%
   filter(posteam == "NYG") %>%
   group_by(week) %>%
   reframe(plays = n(),
-          epa = mean(epa),
+          avg_epa = mean(epa),
           sr = mean(ifelse(epa > 0, 1, 0)))
 
 
