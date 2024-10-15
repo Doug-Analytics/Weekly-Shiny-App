@@ -388,7 +388,7 @@ rush_sr <- load_pbp(2024) %>%
   group_by(week) %>%
   reframe(plays = n(),
           epa = mean(epa),
-          sr = mean(ifelse(epa > 0, 1, )))
+          sr = mean(ifelse(epa > 0, 1, 0)))
 
 
 saveCSV(rush_sr, "rush_sr.csv") 
