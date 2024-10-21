@@ -3,7 +3,7 @@ name: Data Update Notification
 on:
   push:
     paths:
-      - 'path/to/your/data/file'  # Specify the path to your data file
+      - 'Weekly-Shiny-App/FTN_charts_2024.csv'  # Path to your data file
 
 jobs:
   notify:
@@ -15,7 +15,7 @@ jobs:
     - name: Check for data updates
       id: check_update
       run: |
-        if git diff --name-only HEAD^ HEAD | grep 'path/to/your/data/file'; then
+        if git diff --name-only HEAD^ HEAD | grep 'Weekly-Shiny-App/FTN_charts_2024.csv'; then
           echo "Data updated"
           echo "::set-output name=data_updated::true"
         else
