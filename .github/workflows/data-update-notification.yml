@@ -1,0 +1,45 @@
+name: Data Update Notification
+
+on:
+  push:
+    paths:
+      - 'path/to/your/data/file'  # Specify the path to your data file
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Check for data updates
+      id: check_update
+      run: |
+        if git diff --name-only HEAD^ HEAD | grep 'path/to/your/data/file'; then
+          echo "Data updated"
+          echo "::set-output name=data_updated::true"
+        else
+          echo "No data update"
+          echo "::set-output name=data_updated::false"
+        fi
+
+    - name: Send email notification
+      if: steps.check_update.outputs.data_updated == 'true'
+      env:
+        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+      run: |
+        curl --request POST \
+          --url https://api.sendgrid.com/v3/mail/send \
+          --header "Authorization: Bearer $SENDGRID_API_KEY" \
+          --header "Content-Type: application/json" \
+          --data '{
+            "personalizations": [{
+              "to": [{"email": "YOUR_EMAIL"}],
+              "subject": "Data Update Notification"
+            }],
+            "from": {"email": "YOUR_SENDGRID_VERIFIED_EMAIL"},
+            "content": [{
+              "type": "text/plain",
+              "value": "Data has been updated!"
+            }]
+          }'
