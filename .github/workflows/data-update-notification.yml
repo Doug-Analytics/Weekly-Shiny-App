@@ -34,10 +34,10 @@ jobs:
           --header "Content-Type: application/json" \
           --data '{
             "personalizations": [{
-              "to": [{"email": "YOUR_EMAIL"}],
+              "to": [{"email": "Doug.Analytics87@gmail.com"}],
               "subject": "Data Update Notification"
             }],
-            "from": {"email": "YOUR_SENDGRID_VERIFIED_EMAIL"},
+            "from": {"email": "Doug.Analytics87@gmail.com"},
             "content": [{
               "type": "text/plain",
               "value": "Data has been updated!"
