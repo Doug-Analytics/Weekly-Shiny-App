@@ -24,21 +24,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Check for data updates
       id: check_update
       run: |
-        if git diff --name-only HEAD^ HEAD | grep 'Weekly-Shiny-App/FTN_charts_2024.csv'; then
+        if [ "$(git rev-parse --abbrev-ref HEAD)" = "HEAD" ]; then
+          echo "First run, no previous commit to compare."
+          echo "data_updated=false" >> $GITHUB_ENV
+        elif git diff --name-only HEAD^ HEAD | grep 'Weekly-Shiny-App/FTN_charts_2024.csv'; then
           echo "Data updated"
-          echo "::set-output name=data_updated::true"
+          echo "data_updated=true" >> $GITHUB_ENV
         else
           echo "No data update"
-          echo "::set-output name=data_updated::false"
+          echo "data_updated=false" >> $GITHUB_ENV
         fi
 
     - name: Send email notification
-      if: steps.check_update.outputs.data_updated == 'true'
+      if: env.data_updated == 'true'
       env:
         SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       run: |
