@@ -350,3 +350,12 @@ saveRDS(qb_pos, "Weekly_Bar_Graph_data_QB_Position.rds")
 saveRDS(wp, "Weekly_Bar_Graph_data_Win_Probability.rds") 
 
 saveRDS(yards_gained, "Weekly_Bar_Graph_data_Yards_Gained.rds") 
+
+
+fun <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  group_by(season, posteam, week, penalty_type) %>%
+  reframe(plays = n())
+
+write.csv(fun, "data_24.csv")
+
