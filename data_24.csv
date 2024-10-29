@@ -1,1424 +1,255 @@
-"","season","posteam","week","penalty_type","plays"
-"1",2024,"ARI",1,"Unnecessary Roughness",1
-"2",2024,"ARI",1,NA,75
-"3",2024,"ARI",2,"Defensive Holding",1
-"4",2024,"ARI",2,"Defensive Offside",1
-"5",2024,"ARI",2,"False Start",1
-"6",2024,"ARI",2,"Offensive Holding",2
-"7",2024,"ARI",2,NA,75
-"8",2024,"ARI",3,"Defensive Pass Interference",2
-"9",2024,"ARI",3,"False Start",1
-"10",2024,"ARI",3,"Illegal Use of Hands",1
-"11",2024,"ARI",3,"Offensive Holding",2
-"12",2024,"ARI",3,"Roughing the Passer",1
-"13",2024,"ARI",3,"Unnecessary Roughness",1
-"14",2024,"ARI",3,NA,64
-"15",2024,"ARI",4,"Offensive Holding",2
-"16",2024,"ARI",4,NA,71
-"17",2024,"ARI",5,"Encroachment",1
-"18",2024,"ARI",5,"False Start",1
-"19",2024,"ARI",5,"Roughing the Passer",1
-"20",2024,"ARI",5,NA,72
-"21",2024,"ARI",6,"Defensive Holding",1
-"22",2024,"ARI",6,"Delay of Game",1
-"23",2024,"ARI",6,"Face Mask",1
-"24",2024,"ARI",6,"False Start",1
-"25",2024,"ARI",6,"Illegal Formation",1
-"26",2024,"ARI",6,"Illegal Use of Hands",1
-"27",2024,"ARI",6,"Offensive Holding",3
-"28",2024,"ARI",6,"Unnecessary Roughness",1
-"29",2024,"ARI",6,NA,65
-"30",2024,"ARI",7,"Defensive Pass Interference",1
-"31",2024,"ARI",7,"Delay of Game",2
-"32",2024,"ARI",7,"Neutral Zone Infraction",1
-"33",2024,"ARI",7,"Unnecessary Roughness",1
-"34",2024,"ARI",7,NA,69
-"35",2024,"ARI",8,"Defensive Holding",1
-"36",2024,"ARI",8,"False Start",1
-"37",2024,"ARI",8,"Ineligible Downfield Pass",1
-"38",2024,"ARI",8,"Offensive Holding",2
-"39",2024,"ARI",8,NA,78
-"40",2024,"ATL",1,"Defensive Offside",2
-"41",2024,"ATL",1,"Illegal Block Above the Waist",1
-"42",2024,"ATL",1,"Illegal Formation",1
-"43",2024,"ATL",1,"Illegal Use of Hands",2
-"44",2024,"ATL",1,"Offensive Holding",1
-"45",2024,"ATL",1,"Player Out of Bounds on Kick",1
-"46",2024,"ATL",1,NA,62
-"47",2024,"ATL",2,"Face Mask",1
-"48",2024,"ATL",2,"Illegal Block Above the Waist",1
-"49",2024,"ATL",2,"Illegal Contact",1
-"50",2024,"ATL",2,"Unnecessary Roughness",1
-"51",2024,"ATL",2,"Unsportsmanlike Conduct",1
-"52",2024,"ATL",2,NA,69
-"53",2024,"ATL",3,"Defensive Pass Interference",1
-"54",2024,"ATL",3,"False Start",1
-"55",2024,"ATL",3,"Horse Collar Tackle",1
-"56",2024,"ATL",3,"Illegal Block Above the Waist",1
-"57",2024,"ATL",3,"Illegal Kick/Kicking Loose Ball",1
-"58",2024,"ATL",3,"Illegal Use of Hands",2
-"59",2024,"ATL",3,"Neutral Zone Infraction",1
-"60",2024,"ATL",3,"Roughing the Passer",1
-"61",2024,"ATL",3,NA,67
-"62",2024,"ATL",4,"Defensive Pass Interference",1
-"63",2024,"ATL",4,"Face Mask",1
-"64",2024,"ATL",4,"False Start",2
-"65",2024,"ATL",4,"Offensive Holding",2
-"66",2024,"ATL",4,"Offensive Pass Interference",1
-"67",2024,"ATL",4,NA,66
-"68",2024,"ATL",5,"Defensive Offside",1
-"69",2024,"ATL",5,"Defensive Pass Interference",1
-"70",2024,"ATL",5,"Delay of Game",1
-"71",2024,"ATL",5,"False Start",1
-"72",2024,"ATL",5,"Intentional Grounding",1
-"73",2024,"ATL",5,"Offensive Holding",3
-"74",2024,"ATL",5,"Offensive Pass Interference",1
-"75",2024,"ATL",5,"Unnecessary Roughness",1
-"76",2024,"ATL",5,NA,100
-"77",2024,"ATL",6,"Defensive Pass Interference",1
-"78",2024,"ATL",6,"Low Block",1
-"79",2024,"ATL",6,"Offensive Holding",1
-"80",2024,"ATL",6,NA,80
-"81",2024,"ATL",7,"Defensive Pass Interference",1
-"82",2024,"ATL",7,"False Start",4
-"83",2024,"ATL",7,"Offensive Pass Interference",1
-"84",2024,"ATL",7,NA,87
-"85",2024,"ATL",8,"Face Mask",1
-"86",2024,"ATL",8,"Illegal Contact",1
-"87",2024,"ATL",8,"Offensive Holding",2
-"88",2024,"ATL",8,NA,72
-"89",2024,"BAL",1,"Defensive Pass Interference",1
-"90",2024,"BAL",1,"Delay of Game",1
-"91",2024,"BAL",1,"Illegal Formation",2
-"92",2024,"BAL",1,"Offensive Holding",1
-"93",2024,"BAL",1,"Offensive Pass Interference",1
-"94",2024,"BAL",1,NA,90
-"95",2024,"BAL",2,"Defensive Holding",1
-"96",2024,"BAL",2,"False Start",3
-"97",2024,"BAL",2,"Illegal Forward Pass",1
-"98",2024,"BAL",2,"Neutral Zone Infraction",1
-"99",2024,"BAL",2,"Offensive Holding",2
-"100",2024,"BAL",2,"Player Out of Bounds on Kick",1
-"101",2024,"BAL",2,"Unnecessary Roughness",1
-"102",2024,"BAL",2,NA,79
-"103",2024,"BAL",3,"Delay of Game",2
-"104",2024,"BAL",3,"Illegal Use of Hands",1
-"105",2024,"BAL",3,"Offensive Holding",4
-"106",2024,"BAL",3,NA,75
-"107",2024,"BAL",4,"Defensive Holding",1
-"108",2024,"BAL",4,"Fair Catch Interference",1
-"109",2024,"BAL",4,"False Start",2
-"110",2024,"BAL",4,"Intentional Grounding",1
-"111",2024,"BAL",4,"Offensive Holding",2
-"112",2024,"BAL",4,"Unnecessary Roughness",1
-"113",2024,"BAL",4,NA,64
-"114",2024,"BAL",5,"Offensive Holding",1
-"115",2024,"BAL",5,"Roughing the Passer",1
-"116",2024,"BAL",5,NA,93
-"117",2024,"BAL",6,"Defensive Holding",1
-"118",2024,"BAL",6,"Defensive Pass Interference",2
-"119",2024,"BAL",6,"False Start",2
-"120",2024,"BAL",6,NA,79
-"121",2024,"BAL",7,"Defensive Holding",1
-"122",2024,"BAL",7,"Ineligible Downfield Pass",1
-"123",2024,"BAL",7,"Low Block",1
-"124",2024,"BAL",7,"Offensive Holding",5
-"125",2024,"BAL",7,"Offensive Pass Interference",1
-"126",2024,"BAL",7,"Roughing the Passer",1
-"127",2024,"BAL",7,NA,66
-"128",2024,"BAL",8,"Defensive Pass Interference",1
-"129",2024,"BAL",8,"Defensive Too Many Men on Field",1
-"130",2024,"BAL",8,"Face Mask",1
-"131",2024,"BAL",8,"False Start",2
-"132",2024,"BAL",8,"Illegal Block Above the Waist",1
-"133",2024,"BAL",8,"Offensive Holding",3
-"134",2024,"BAL",8,NA,79
-"135",2024,"BUF",1,"Defensive Holding",1
-"136",2024,"BUF",1,"Defensive Pass Interference",1
-"137",2024,"BUF",1,"Defensive Too Many Men on Field",1
-"138",2024,"BUF",1,"Face Mask",1
-"139",2024,"BUF",1,"False Start",4
-"140",2024,"BUF",1,"Kickoff Short of Landing Zone",1
-"141",2024,"BUF",1,"Offensive Holding",2
-"142",2024,"BUF",1,"Roughing the Passer",1
-"143",2024,"BUF",1,NA,69
-"144",2024,"BUF",2,"False Start",1
-"145",2024,"BUF",2,"Illegal Formation",1
-"146",2024,"BUF",2,"Unnecessary Roughness",1
-"147",2024,"BUF",2,NA,58
-"148",2024,"BUF",3,"Defensive Offside",2
-"149",2024,"BUF",3,"False Start",1
-"150",2024,"BUF",3,"Ineligible Downfield Pass",1
-"151",2024,"BUF",3,"Unnecessary Roughness",2
-"152",2024,"BUF",3,NA,72
-"153",2024,"BUF",4,"Defensive Delay of Game",1
-"154",2024,"BUF",4,"Offensive Holding",2
-"155",2024,"BUF",4,"Unnecessary Roughness",1
-"156",2024,"BUF",4,NA,73
-"157",2024,"BUF",5,"Defensive Holding",1
-"158",2024,"BUF",5,"False Start",3
-"159",2024,"BUF",5,"Offensive Holding",1
-"160",2024,"BUF",5,"Unnecessary Roughness",1
-"161",2024,"BUF",5,NA,76
-"162",2024,"BUF",6,"Defensive Pass Interference",3
-"163",2024,"BUF",6,"False Start",3
-"164",2024,"BUF",6,"Illegal Formation",2
-"165",2024,"BUF",6,"Neutral Zone Infraction",1
-"166",2024,"BUF",6,"Offensive Pass Interference",1
-"167",2024,"BUF",6,"Roughing the Passer",1
-"168",2024,"BUF",6,"Unsportsmanlike Conduct",2
-"169",2024,"BUF",6,NA,74
-"170",2024,"BUF",7,"Defensive Offside",1
-"171",2024,"BUF",7,"False Start",1
-"172",2024,"BUF",7,"Offensive Holding",2
-"173",2024,"BUF",7,NA,67
-"174",2024,"BUF",8,"Defensive Pass Interference",1
-"175",2024,"BUF",8,"Delay of Game",1
-"176",2024,"BUF",8,"Encroachment",1
-"177",2024,"BUF",8,"False Start",3
-"178",2024,"BUF",8,"Illegal Contact",1
-"179",2024,"BUF",8,"Offensive Holding",4
-"180",2024,"BUF",8,"Offensive Pass Interference",1
-"181",2024,"BUF",8,"Roughing the Passer",1
-"182",2024,"BUF",8,"Tripping",1
-"183",2024,"BUF",8,NA,80
-"184",2024,"CAR",1,"Defensive Offside",1
-"185",2024,"CAR",1,"Defensive Pass Interference",1
-"186",2024,"CAR",1,"Delay of Game",1
-"187",2024,"CAR",1,"Offensive Holding",3
-"188",2024,"CAR",1,"Unnecessary Roughness",1
-"189",2024,"CAR",1,NA,72
-"190",2024,"CAR",2,"Face Mask",1
-"191",2024,"CAR",2,"Fair Catch Interference",1
-"192",2024,"CAR",2,"False Start",1
-"193",2024,"CAR",2,"Kickoff Short of Landing Zone",1
-"194",2024,"CAR",2,"Offensive Holding",1
-"195",2024,"CAR",2,NA,60
-"196",2024,"CAR",3,"Defensive Pass Interference",1
-"197",2024,"CAR",3,"False Start",1
-"198",2024,"CAR",3,"Illegal Use of Hands",1
-"199",2024,"CAR",3,"Neutral Zone Infraction",1
-"200",2024,"CAR",3,"Offensive Holding",2
-"201",2024,"CAR",3,NA,87
-"202",2024,"CAR",4,"Defensive Holding",1
-"203",2024,"CAR",4,"False Start",2
-"204",2024,"CAR",4,"Illegal Use of Hands",1
-"205",2024,"CAR",4,NA,84
-"206",2024,"CAR",5,"Defensive Pass Interference",1
-"207",2024,"CAR",5,"False Start",1
-"208",2024,"CAR",5,"Offensive Too Many Men on Field",1
-"209",2024,"CAR",5,NA,73
-"210",2024,"CAR",6,"Defensive Offside",1
-"211",2024,"CAR",6,"Defensive Pass Interference",1
-"212",2024,"CAR",6,"False Start",3
-"213",2024,"CAR",6,"Illegal Formation",1
-"214",2024,"CAR",6,"Illegal Shift",1
-"215",2024,"CAR",6,"Low Block",1
-"216",2024,"CAR",6,"Offensive Holding",4
-"217",2024,"CAR",6,NA,74
-"218",2024,"CAR",7,"Delay of Game",1
-"219",2024,"CAR",7,"Illegal Block Above the Waist",1
-"220",2024,"CAR",7,"Neutral Zone Infraction",1
-"221",2024,"CAR",7,"Offensive Holding",1
-"222",2024,"CAR",7,NA,58
-"223",2024,"CAR",8,"Delay of Game",2
-"224",2024,"CAR",8,"False Start",1
-"225",2024,"CAR",8,"Offensive Holding",4
-"226",2024,"CAR",8,"Roughing the Passer",2
-"227",2024,"CAR",8,NA,69
-"228",2024,"CHI",1,"Defensive Too Many Men on Field",1
-"229",2024,"CHI",1,"Delay of Game",1
-"230",2024,"CHI",1,"False Start",1
-"231",2024,"CHI",1,"Illegal Block Above the Waist",1
-"232",2024,"CHI",1,"Neutral Zone Infraction",1
-"233",2024,"CHI",1,"Offensive Holding",3
-"234",2024,"CHI",1,NA,68
-"235",2024,"CHI",2,"Defensive Holding",2
-"236",2024,"CHI",2,"Defensive Pass Interference",2
-"237",2024,"CHI",2,"Delay of Game",1
-"238",2024,"CHI",2,"False Start",4
-"239",2024,"CHI",2,"Intentional Grounding",1
-"240",2024,"CHI",2,"Offensive Holding",2
-"241",2024,"CHI",2,"Roughing the Passer",1
-"242",2024,"CHI",2,NA,77
-"243",2024,"CHI",3,"Defensive Pass Interference",2
-"244",2024,"CHI",3,"Encroachment",1
-"245",2024,"CHI",3,"False Start",1
-"246",2024,"CHI",3,"Offensive Holding",1
-"247",2024,"CHI",3,"Roughing the Kicker",1
-"248",2024,"CHI",3,"Roughing the Passer",1
-"249",2024,"CHI",3,NA,97
-"250",2024,"CHI",4,"Defensive Holding",2
-"251",2024,"CHI",4,"Defensive Pass Interference",1
-"252",2024,"CHI",4,"False Start",3
-"253",2024,"CHI",4,"Illegal Blindside Block",1
-"254",2024,"CHI",4,"Illegal Formation",2
-"255",2024,"CHI",4,"Offensive Holding",1
-"256",2024,"CHI",4,NA,69
-"257",2024,"CHI",5,"Clipping",1
-"258",2024,"CHI",5,"Defensive Pass Interference",1
-"259",2024,"CHI",5,"Defensive Too Many Men on Field",1
-"260",2024,"CHI",5,"False Start",1
-"261",2024,"CHI",5,"Illegal Shift",1
-"262",2024,"CHI",5,"Offensive Holding",1
-"263",2024,"CHI",5,NA,84
-"264",2024,"CHI",6,"Defensive Holding",2
-"265",2024,"CHI",6,"Defensive Pass Interference",1
-"266",2024,"CHI",6,"Defensive Too Many Men on Field",1
-"267",2024,"CHI",6,"Illegal Formation",1
-"268",2024,"CHI",6,"Illegal Shift",1
-"269",2024,"CHI",6,NA,74
-"270",2024,"CHI",8,"Defensive Pass Interference",1
-"271",2024,"CHI",8,"Delay of Game",1
-"272",2024,"CHI",8,"False Start",3
-"273",2024,"CHI",8,"Illegal Formation",1
-"274",2024,"CHI",8,"Unnecessary Roughness",1
-"275",2024,"CHI",8,NA,74
-"276",2024,"CIN",1,"Defensive Offside",1
-"277",2024,"CIN",1,"Defensive Pass Interference",1
-"278",2024,"CIN",1,"Illegal Formation",1
-"279",2024,"CIN",1,"Illegal Substitution",1
-"280",2024,"CIN",1,NA,57
-"281",2024,"CIN",2,"Defensive Pass Interference",1
-"282",2024,"CIN",2,"Delay of Game",1
-"283",2024,"CIN",2,"False Start",1
-"284",2024,"CIN",2,"Offensive Holding",1
-"285",2024,"CIN",2,"Offensive Pass Interference",1
-"286",2024,"CIN",2,"Unsportsmanlike Conduct",1
-"287",2024,"CIN",2,NA,75
-"288",2024,"CIN",3,"Defensive Pass Interference",1
-"289",2024,"CIN",3,"False Start",1
-"290",2024,"CIN",3,NA,75
-"291",2024,"CIN",4,"Defensive Pass Interference",2
-"292",2024,"CIN",4,"Illegal Contact",1
-"293",2024,"CIN",4,"Neutral Zone Infraction",1
-"294",2024,"CIN",4,"Offensive Holding",2
-"295",2024,"CIN",4,"Offensive Pass Interference",1
-"296",2024,"CIN",4,NA,76
-"297",2024,"CIN",5,"Defensive Pass Interference",1
-"298",2024,"CIN",5,"Delay of Game",1
-"299",2024,"CIN",5,"False Start",2
-"300",2024,"CIN",5,"Illegal Use of Hands",1
-"301",2024,"CIN",5,"Neutral Zone Infraction",1
-"302",2024,"CIN",5,"Roughing the Passer",1
-"303",2024,"CIN",5,NA,85
-"304",2024,"CIN",6,"Intentional Grounding",1
-"305",2024,"CIN",6,"Offensive Holding",1
-"306",2024,"CIN",6,NA,64
-"307",2024,"CIN",7,"Defensive Offside",1
-"308",2024,"CIN",7,"Delay of Game",1
-"309",2024,"CIN",7,"Offensive Holding",1
-"310",2024,"CIN",7,"Roughing the Passer",1
-"311",2024,"CIN",7,NA,70
-"312",2024,"CIN",8,NA,71
-"313",2024,"CLE",1,"Defensive Too Many Men on Field",1
-"314",2024,"CLE",1,"False Start",2
-"315",2024,"CLE",1,"Illegal Contact",1
-"316",2024,"CLE",1,"Illegal Formation",3
-"317",2024,"CLE",1,"Illegal Shift",1
-"318",2024,"CLE",1,"Ineligible Downfield Pass",1
-"319",2024,"CLE",1,"Offensive Holding",3
-"320",2024,"CLE",1,"Unnecessary Roughness",1
-"321",2024,"CLE",1,NA,85
-"322",2024,"CLE",2,"Defensive Pass Interference",1
-"323",2024,"CLE",2,"Face Mask",1
-"324",2024,"CLE",2,"Illegal Block Above the Waist",1
-"325",2024,"CLE",2,"Illegal Shift",2
-"326",2024,"CLE",2,"Offensive Holding",5
-"327",2024,"CLE",2,"Roughing the Passer",2
-"328",2024,"CLE",2,NA,76
-"329",2024,"CLE",3,"Defensive Offside",1
-"330",2024,"CLE",3,"Defensive Pass Interference",1
-"331",2024,"CLE",3,"False Start",1
-"332",2024,"CLE",3,"Intentional Grounding",1
-"333",2024,"CLE",3,"Neutral Zone Infraction",1
-"334",2024,"CLE",3,"Offensive Holding",1
-"335",2024,"CLE",3,NA,76
-"336",2024,"CLE",4,"False Start",1
-"337",2024,"CLE",4,"Illegal Shift",1
-"338",2024,"CLE",4,"Offensive Holding",1
-"339",2024,"CLE",4,"Roughing the Passer",1
-"340",2024,"CLE",4,NA,69
-"341",2024,"CLE",5,"Defensive Offside",2
-"342",2024,"CLE",5,"Delay of Game",1
-"343",2024,"CLE",5,"Fair Catch Interference",1
-"344",2024,"CLE",5,"False Start",4
-"345",2024,"CLE",5,"Ineligible Downfield Pass",1
-"346",2024,"CLE",5,NA,78
-"347",2024,"CLE",6,"Delay of Game",1
-"348",2024,"CLE",6,"Face Mask",1
-"349",2024,"CLE",6,"False Start",3
-"350",2024,"CLE",6,"Offensive Holding",3
-"351",2024,"CLE",6,"Roughing the Passer",1
-"352",2024,"CLE",6,NA,67
-"353",2024,"CLE",7,"Defensive Pass Interference",1
-"354",2024,"CLE",7,"False Start",1
-"355",2024,"CLE",7,"Illegal Shift",2
-"356",2024,"CLE",7,"Illegal Use of Hands",1
-"357",2024,"CLE",7,"Ineligible Downfield Pass",1
-"358",2024,"CLE",7,"Intentional Grounding",1
-"359",2024,"CLE",7,"Lowering the Head to Make Forcible Contact",1
-"360",2024,"CLE",7,"Offensive Offside",1
-"361",2024,"CLE",7,NA,89
-"362",2024,"CLE",8,"False Start",3
-"363",2024,"CLE",8,"Illegal Use of Hands",1
-"364",2024,"CLE",8,"Offensive Holding",1
-"365",2024,"CLE",8,NA,81
-"366",2024,"DAL",1,"Defensive Offside",2
-"367",2024,"DAL",1,"Delay of Game",2
-"368",2024,"DAL",1,"False Start",1
-"369",2024,"DAL",1,"Illegal Block Above the Waist",1
-"370",2024,"DAL",1,"Offensive Holding",2
-"371",2024,"DAL",1,"Player Out of Bounds on Kick",1
-"372",2024,"DAL",1,NA,76
-"373",2024,"DAL",2,"Defensive Holding",2
-"374",2024,"DAL",2,"False Start",1
-"375",2024,"DAL",2,"Ineligible Downfield Pass",1
-"376",2024,"DAL",2,"Offensive Holding",1
-"377",2024,"DAL",2,NA,82
-"378",2024,"DAL",3,"Defensive Holding",2
-"379",2024,"DAL",3,"Face Mask",1
-"380",2024,"DAL",3,"False Start",3
-"381",2024,"DAL",3,"Illegal Contact",2
-"382",2024,"DAL",3,"Offensive Holding",3
-"383",2024,"DAL",3,"Roughing the Passer",1
-"384",2024,"DAL",3,NA,85
-"385",2024,"DAL",4,"False Start",1
-"386",2024,"DAL",4,"Illegal Formation",1
-"387",2024,"DAL",4,"Offensive Holding",4
-"388",2024,"DAL",4,"Offensive Pass Interference",1
-"389",2024,"DAL",4,"Taunting",1
-"390",2024,"DAL",4,NA,64
-"391",2024,"DAL",5,"Defensive Holding",1
-"392",2024,"DAL",5,"Defensive Offside",1
-"393",2024,"DAL",5,"Face Mask",1
-"394",2024,"DAL",5,"False Start",4
-"395",2024,"DAL",5,"Illegal Formation",1
-"396",2024,"DAL",5,"Intentional Grounding",1
-"397",2024,"DAL",5,"Neutral Zone Infraction",1
-"398",2024,"DAL",5,"Unnecessary Roughness",1
-"399",2024,"DAL",5,NA,82
-"400",2024,"DAL",6,"Defensive Holding",2
-"401",2024,"DAL",6,"Defensive Pass Interference",2
-"402",2024,"DAL",6,"False Start",1
-"403",2024,"DAL",6,"Player Out of Bounds on Kick",1
-"404",2024,"DAL",6,NA,79
-"405",2024,"DAL",8,"Defensive Pass Interference",2
-"406",2024,"DAL",8,"False Start",1
-"407",2024,"DAL",8,"Illegal Formation",1
-"408",2024,"DAL",8,"Illegal Forward Pass",1
-"409",2024,"DAL",8,"Neutral Zone Infraction",1
-"410",2024,"DAL",8,"Offensive Holding",1
-"411",2024,"DAL",8,NA,74
-"412",2024,"DEN",1,"Delay of Game",2
-"413",2024,"DEN",1,"False Start",1
-"414",2024,"DEN",1,NA,90
-"415",2024,"DEN",2,"Defensive Offside",1
-"416",2024,"DEN",2,"Illegal Formation",1
-"417",2024,"DEN",2,"Neutral Zone Infraction",2
-"418",2024,"DEN",2,"Offensive Holding",2
-"419",2024,"DEN",2,NA,71
-"420",2024,"DEN",3,"Defensive Offside",3
-"421",2024,"DEN",3,"Delay of Game",1
-"422",2024,"DEN",3,"Illegal Block Above the Waist",1
-"423",2024,"DEN",3,"Offensive Holding",1
-"424",2024,"DEN",3,NA,75
-"425",2024,"DEN",4,"Defensive Offside",2
-"426",2024,"DEN",4,"Defensive Pass Interference",1
-"427",2024,"DEN",4,"False Start",1
-"428",2024,"DEN",4,"Offensive Holding",2
-"429",2024,"DEN",4,"Offensive Pass Interference",1
-"430",2024,"DEN",4,NA,70
-"431",2024,"DEN",5,"Defensive Holding",1
-"432",2024,"DEN",5,"Defensive Too Many Men on Field",2
-"433",2024,"DEN",5,"Delay of Game",2
-"434",2024,"DEN",5,"Encroachment",1
-"435",2024,"DEN",5,"Illegal Shift",1
-"436",2024,"DEN",5,"Leverage",1
-"437",2024,"DEN",5,"Offensive Holding",1
-"438",2024,"DEN",5,"Offensive Pass Interference",1
-"439",2024,"DEN",5,"Unnecessary Roughness",1
-"440",2024,"DEN",5,NA,75
-"441",2024,"DEN",6,"Defensive Delay of Game",1
-"442",2024,"DEN",6,"Delay of Game",1
-"443",2024,"DEN",6,"False Start",1
-"444",2024,"DEN",6,"Illegal Formation",1
-"445",2024,"DEN",6,"Offensive Holding",1
-"446",2024,"DEN",6,NA,66
-"447",2024,"DEN",7,"Defensive Holding",1
-"448",2024,"DEN",7,"Delay of Game",1
-"449",2024,"DEN",7,"Ineligible Downfield Pass",1
-"450",2024,"DEN",7,"Offensive Holding",2
-"451",2024,"DEN",7,NA,77
-"452",2024,"DEN",8,"Defensive Holding",1
-"453",2024,"DEN",8,"False Start",1
-"454",2024,"DEN",8,NA,85
-"455",2024,"DET",1,"False Start",2
-"456",2024,"DET",1,"Illegal Use of Hands",1
-"457",2024,"DET",1,"Offensive Holding",1
-"458",2024,"DET",1,"Unnecessary Roughness",1
-"459",2024,"DET",1,NA,74
-"460",2024,"DET",2,"Neutral Zone Infraction",1
-"461",2024,"DET",2,"Offensive Holding",1
-"462",2024,"DET",2,"Offensive Too Many Men on Field",1
-"463",2024,"DET",2,"Roughing the Passer",2
-"464",2024,"DET",2,NA,95
-"465",2024,"DET",3,"False Start",4
-"466",2024,"DET",3,"Unnecessary Roughness",1
-"467",2024,"DET",3,NA,81
-"468",2024,"DET",4,"Defensive Too Many Men on Field",1
-"469",2024,"DET",4,"Face Mask",1
-"470",2024,"DET",4,"Offensive Holding",2
-"471",2024,"DET",4,"Offensive Pass Interference",1
-"472",2024,"DET",4,"Unsportsmanlike Conduct",1
-"473",2024,"DET",4,NA,63
-"474",2024,"DET",6,"Delay of Game",1
-"475",2024,"DET",6,"Encroachment",1
-"476",2024,"DET",6,"Face Mask",1
-"477",2024,"DET",6,"Ineligible Downfield Pass",1
-"478",2024,"DET",6,"Offensive Pass Interference",1
-"479",2024,"DET",6,"Unsportsmanlike Conduct",1
-"480",2024,"DET",6,NA,80
-"481",2024,"DET",7,"False Start",3
-"482",2024,"DET",7,"Offensive Holding",2
-"483",2024,"DET",7,"Roughing the Passer",1
-"484",2024,"DET",7,NA,72
-"485",2024,"DET",8,"Defensive Pass Interference",1
-"486",2024,"DET",8,"Face Mask",1
-"487",2024,"DET",8,NA,62
-"488",2024,"GB",1,"Defensive Offside",1
-"489",2024,"GB",1,"Defensive Pass Interference",1
-"490",2024,"GB",1,"False Start",2
-"491",2024,"GB",1,"Illegal Formation",1
-"492",2024,"GB",1,"Illegal Shift",1
-"493",2024,"GB",1,"Offensive Holding",3
-"494",2024,"GB",1,"Offensive Pass Interference",1
-"495",2024,"GB",1,"Roughing the Passer",1
-"496",2024,"GB",1,"Unnecessary Roughness",1
-"497",2024,"GB",1,NA,74
-"498",2024,"GB",2,"Delay of Game",1
-"499",2024,"GB",2,"Ineligible Downfield Pass",2
-"500",2024,"GB",2,"Offensive Holding",2
-"501",2024,"GB",2,NA,79
-"502",2024,"GB",3,"Defensive Holding",1
-"503",2024,"GB",3,"Delay of Game",1
-"504",2024,"GB",3,"Illegal Formation",1
-"505",2024,"GB",3,"Illegal Shift",1
-"506",2024,"GB",3,"Illegal Use of Hands",1
-"507",2024,"GB",3,"Offensive Holding",3
-"508",2024,"GB",3,NA,73
-"509",2024,"GB",4,"Defensive Pass Interference",1
-"510",2024,"GB",4,"False Start",2
-"511",2024,"GB",4,"Illegal Use of Hands",1
-"512",2024,"GB",4,"Offensive Holding",1
-"513",2024,"GB",4,"Unsportsmanlike Conduct",1
-"514",2024,"GB",4,NA,87
-"515",2024,"GB",5,"Defensive Too Many Men on Field",1
-"516",2024,"GB",5,"Delay of Game",1
-"517",2024,"GB",5,"False Start",3
-"518",2024,"GB",5,"Neutral Zone Infraction",1
-"519",2024,"GB",5,"Offensive Holding",1
-"520",2024,"GB",5,NA,71
-"521",2024,"GB",6,"Defensive Holding",2
-"522",2024,"GB",6,"False Start",1
-"523",2024,"GB",6,"Illegal Use of Hands",1
-"524",2024,"GB",6,"Neutral Zone Infraction",3
-"525",2024,"GB",6,"Unnecessary Roughness",1
-"526",2024,"GB",6,NA,84
-"527",2024,"GB",7,"Defensive Offside",1
-"528",2024,"GB",7,"Defensive Pass Interference",1
-"529",2024,"GB",7,"Illegal Block Above the Waist",1
-"530",2024,"GB",7,"Offensive Holding",1
-"531",2024,"GB",7,"Unnecessary Roughness",1
-"532",2024,"GB",7,NA,71
-"533",2024,"GB",8,"Defensive Delay of Game",1
-"534",2024,"GB",8,"Defensive Pass Interference",1
-"535",2024,"GB",8,"False Start",1
-"536",2024,"GB",8,"Illegal Shift",1
-"537",2024,"GB",8,"Illegal Use of Hands",1
-"538",2024,"GB",8,"Offensive Holding",1
-"539",2024,"GB",8,NA,84
-"540",2024,"HOU",1,"Defensive Holding",2
-"541",2024,"HOU",1,"Defensive Offside",1
-"542",2024,"HOU",1,"False Start",3
-"543",2024,"HOU",1,"Offensive Holding",1
-"544",2024,"HOU",1,NA,90
-"545",2024,"HOU",2,"False Start",3
-"546",2024,"HOU",2,"Illegal Formation",1
-"547",2024,"HOU",2,"Illegal Use of Hands",1
-"548",2024,"HOU",2,"Offensive Holding",2
-"549",2024,"HOU",2,"Unnecessary Roughness",1
-"550",2024,"HOU",2,NA,75
-"551",2024,"HOU",3,"False Start",5
-"552",2024,"HOU",3,"Illegal Formation",2
-"553",2024,"HOU",3,"Illegal Use of Hands",1
-"554",2024,"HOU",3,"Offensive Holding",1
-"555",2024,"HOU",3,NA,77
-"556",2024,"HOU",4,"Defensive Holding",1
-"557",2024,"HOU",4,"False Start",1
-"558",2024,"HOU",4,"Illegal Contact",1
-"559",2024,"HOU",4,"Illegal Shift",1
-"560",2024,"HOU",4,"Ineligible Downfield Pass",2
-"561",2024,"HOU",4,"Offensive Holding",5
-"562",2024,"HOU",4,NA,80
-"563",2024,"HOU",5,"False Start",1
-"564",2024,"HOU",5,"Illegal Touch Kick",1
-"565",2024,"HOU",5,"Intentional Grounding",1
-"566",2024,"HOU",5,"Offensive Holding",1
-"567",2024,"HOU",5,"Taunting",1
-"568",2024,"HOU",5,NA,80
-"569",2024,"HOU",6,"Defensive Offside",1
-"570",2024,"HOU",6,"Defensive Pass Interference",2
-"571",2024,"HOU",6,"Illegal Formation",1
-"572",2024,"HOU",6,"Illegal Shift",1
-"573",2024,"HOU",6,"Offensive Holding",1
-"574",2024,"HOU",6,"Taunting",1
-"575",2024,"HOU",6,NA,77
-"576",2024,"HOU",7,"Defensive Offside",3
-"577",2024,"HOU",7,"Defensive Pass Interference",1
-"578",2024,"HOU",7,"Illegal Formation",1
-"579",2024,"HOU",7,"Neutral Zone Infraction",1
-"580",2024,"HOU",7,"Unsportsmanlike Conduct",1
-"581",2024,"HOU",7,NA,72
-"582",2024,"HOU",8,"Defensive Offside",1
-"583",2024,"HOU",8,"Defensive Pass Interference",1
-"584",2024,"HOU",8,"False Start",2
-"585",2024,"HOU",8,"Illegal Block Above the Waist",1
-"586",2024,"HOU",8,"Illegal Formation",1
-"587",2024,"HOU",8,NA,86
-"588",2024,"IND",1,"False Start",1
-"589",2024,"IND",1,"Illegal Contact",1
-"590",2024,"IND",1,NA,57
-"591",2024,"IND",2,"False Start",1
-"592",2024,"IND",2,"Illegal Formation",1
-"593",2024,"IND",2,"Offensive Holding",1
-"594",2024,"IND",2,"Roughing the Passer",1
-"595",2024,"IND",2,NA,65
-"596",2024,"IND",3,"False Start",2
-"597",2024,"IND",3,"Illegal Shift",1
-"598",2024,"IND",3,"Illegal Use of Hands",1
-"599",2024,"IND",3,"Ineligible Downfield Pass",1
-"600",2024,"IND",3,"Neutral Zone Infraction",1
-"601",2024,"IND",3,NA,67
-"602",2024,"IND",4,"Defensive Pass Interference",1
-"603",2024,"IND",4,"False Start",1
-"604",2024,"IND",4,"Offensive Holding",1
-"605",2024,"IND",4,"Unnecessary Roughness",1
-"606",2024,"IND",4,NA,80
-"607",2024,"IND",5,"False Start",3
-"608",2024,"IND",5,"Illegal Contact",1
-"609",2024,"IND",5,"Unsportsmanlike Conduct",1
-"610",2024,"IND",5,NA,88
-"611",2024,"IND",6,"Defensive Pass Interference",3
-"612",2024,"IND",6,"Face Mask",1
-"613",2024,"IND",6,"Illegal Contact",1
-"614",2024,"IND",6,"Offensive Holding",1
-"615",2024,"IND",6,"Roughing the Passer",1
-"616",2024,"IND",6,NA,77
-"617",2024,"IND",7,"Delay of Game",1
-"618",2024,"IND",7,"False Start",1
-"619",2024,"IND",7,"Neutral Zone Infraction",1
-"620",2024,"IND",7,"Offensive Holding",1
-"621",2024,"IND",7,NA,77
-"622",2024,"IND",8,"Defensive Offside",1
-"623",2024,"IND",8,"False Start",3
-"624",2024,"IND",8,"Illegal Formation",1
-"625",2024,"IND",8,"Offensive Holding",2
-"626",2024,"IND",8,"Offensive Pass Interference",1
-"627",2024,"IND",8,NA,77
-"628",2024,"JAX",1,"Defensive Offside",1
-"629",2024,"JAX",1,"Defensive Pass Interference",1
-"630",2024,"JAX",1,"Delay of Game",2
-"631",2024,"JAX",1,"Face Mask",1
-"632",2024,"JAX",1,"False Start",2
-"633",2024,"JAX",1,"Offensive Holding",1
-"634",2024,"JAX",1,NA,64
-"635",2024,"JAX",2,"Defensive Holding",1
-"636",2024,"JAX",2,"Defensive Offside",2
-"637",2024,"JAX",2,"Illegal Formation",1
-"638",2024,"JAX",2,"Illegal Shift",2
-"639",2024,"JAX",2,"Neutral Zone Infraction",1
-"640",2024,"JAX",2,NA,68
-"641",2024,"JAX",3,"Defensive Offside",1
-"642",2024,"JAX",3,"Defensive Pass Interference",1
-"643",2024,"JAX",3,"False Start",3
-"644",2024,"JAX",3,"Illegal Formation",1
-"645",2024,"JAX",3,"Unnecessary Roughness",1
-"646",2024,"JAX",3,NA,82
-"647",2024,"JAX",4,"Defensive Holding",1
-"648",2024,"JAX",4,"Encroachment",1
-"649",2024,"JAX",4,"False Start",1
-"650",2024,"JAX",4,"Illegal Block Above the Waist",1
-"651",2024,"JAX",4,"Illegal Formation",1
-"652",2024,"JAX",4,"Unnecessary Roughness",1
-"653",2024,"JAX",4,"Unsportsmanlike Conduct",1
-"654",2024,"JAX",4,NA,70
-"655",2024,"JAX",5,"Defensive Holding",1
-"656",2024,"JAX",5,"Face Mask",1
-"657",2024,"JAX",5,"False Start",1
-"658",2024,"JAX",5,NA,73
-"659",2024,"JAX",6,"False Start",3
-"660",2024,"JAX",6,"Offensive Holding",1
-"661",2024,"JAX",6,NA,74
-"662",2024,"JAX",7,"Defensive Pass Interference",1
-"663",2024,"JAX",7,"Neutral Zone Infraction",1
-"664",2024,"JAX",7,NA,71
-"665",2024,"JAX",8,"False Start",3
-"666",2024,"JAX",8,"Illegal Block Above the Waist",1
-"667",2024,"JAX",8,"Illegal Motion",1
-"668",2024,"JAX",8,NA,73
-"669",2024,"KC",1,"False Start",2
-"670",2024,"KC",1,"Horse Collar Tackle",1
-"671",2024,"KC",1,"Offensive Holding",3
-"672",2024,"KC",1,"Roughing the Passer",1
-"673",2024,"KC",1,NA,63
-"674",2024,"KC",2,"Defensive Holding",1
-"675",2024,"KC",2,"Defensive Pass Interference",1
-"676",2024,"KC",2,"Illegal Contact",1
-"677",2024,"KC",2,"Illegal Use of Hands",1
-"678",2024,"KC",2,"Offensive Holding",2
-"679",2024,"KC",2,NA,73
-"680",2024,"KC",3,"Defensive Too Many Men on Field",1
-"681",2024,"KC",3,"Offensive Holding",1
-"682",2024,"KC",3,"Roughing the Passer",1
-"683",2024,"KC",3,NA,85
-"684",2024,"KC",4,"Defensive Holding",2
-"685",2024,"KC",4,"False Start",2
-"686",2024,"KC",4,"Offensive Holding",3
-"687",2024,"KC",4,NA,69
-"688",2024,"KC",5,"Defensive Holding",1
-"689",2024,"KC",5,"Defensive Pass Interference",1
-"690",2024,"KC",5,"False Start",1
-"691",2024,"KC",5,"Offensive Holding",4
-"692",2024,"KC",5,NA,91
-"693",2024,"KC",7,"Defensive Offside",2
-"694",2024,"KC",7,"Defensive Too Many Men on Field",1
-"695",2024,"KC",7,"Offensive Holding",1
-"696",2024,"KC",7,NA,81
-"697",2024,"KC",8,"Illegal Block Above the Waist",1
-"698",2024,"KC",8,"Offensive Holding",3
-"699",2024,"KC",8,"Offensive Offside",1
-"700",2024,"KC",8,"Roughing the Passer",1
-"701",2024,"KC",8,"Unnecessary Roughness",1
-"702",2024,"KC",8,NA,79
-"703",2024,"LA",1,"Defensive Offside",1
-"704",2024,"LA",1,"Defensive Pass Interference",2
-"705",2024,"LA",1,"False Start",2
-"706",2024,"LA",1,"Offensive Holding",1
-"707",2024,"LA",1,"Roughing the Passer",1
-"708",2024,"LA",1,NA,86
-"709",2024,"LA",2,"Taunting",1
-"710",2024,"LA",2,"Unnecessary Roughness",1
-"711",2024,"LA",2,NA,65
-"712",2024,"LA",3,"Defensive Holding",1
-"713",2024,"LA",3,"Defensive Pass Interference",2
-"714",2024,"LA",3,"False Start",1
-"715",2024,"LA",3,"Illegal Block Above the Waist",1
-"716",2024,"LA",3,"Intentional Grounding",1
-"717",2024,"LA",3,"Offensive Holding",1
-"718",2024,"LA",3,NA,67
-"719",2024,"LA",4,"Defensive Pass Interference",1
-"720",2024,"LA",4,"Encroachment",1
-"721",2024,"LA",4,"False Start",1
-"722",2024,"LA",4,"Offensive Pass Interference",1
-"723",2024,"LA",4,"Player Out of Bounds on Kick",1
-"724",2024,"LA",4,"Unnecessary Roughness",1
-"725",2024,"LA",4,NA,70
-"726",2024,"LA",5,"Defensive Pass Interference",1
-"727",2024,"LA",5,"False Start",2
-"728",2024,"LA",5,"Offensive Holding",1
-"729",2024,"LA",5,NA,87
-"730",2024,"LA",7,"Defensive Holding",1
-"731",2024,"LA",7,"False Start",1
-"732",2024,"LA",7,"Illegal Formation",1
-"733",2024,"LA",7,"Offensive Holding",1
-"734",2024,"LA",7,"Roughing the Passer",1
-"735",2024,"LA",7,NA,67
-"736",2024,"LA",8,"Defensive Holding",1
-"737",2024,"LA",8,"Defensive Pass Interference",2
-"738",2024,"LA",8,"Defensive Too Many Men on Field",1
-"739",2024,"LA",8,"Face Mask",1
-"740",2024,"LA",8,"False Start",4
-"741",2024,"LA",8,"Illegal Use of Hands",1
-"742",2024,"LA",8,"Offensive Holding",3
-"743",2024,"LA",8,NA,78
-"744",2024,"LAC",1,"Defensive Offside",1
-"745",2024,"LAC",1,"False Start",4
-"746",2024,"LAC",1,"Offensive Holding",1
-"747",2024,"LAC",1,NA,72
-"748",2024,"LAC",2,"Face Mask",2
-"749",2024,"LAC",2,"Illegal Formation",2
-"750",2024,"LAC",2,"Illegal Use of Hands",2
-"751",2024,"LAC",2,"Offensive Holding",1
-"752",2024,"LAC",2,NA,74
-"753",2024,"LAC",3,"Defensive Delay of Game",1
-"754",2024,"LAC",3,"Illegal Formation",1
-"755",2024,"LAC",3,"Offensive Holding",1
-"756",2024,"LAC",3,"Player Out of Bounds on Kick",1
-"757",2024,"LAC",3,NA,58
-"758",2024,"LAC",4,"Chop Block",1
-"759",2024,"LAC",4,"False Start",4
-"760",2024,"LAC",4,"Illegal Formation",1
-"761",2024,"LAC",4,"Offensive Holding",1
-"762",2024,"LAC",4,NA,68
-"763",2024,"LAC",6,"Defensive Holding",1
-"764",2024,"LAC",6,"Defensive Pass Interference",1
-"765",2024,"LAC",6,"Delay of Game",1
-"766",2024,"LAC",6,"Offensive Pass Interference",1
-"767",2024,"LAC",6,NA,92
-"768",2024,"LAC",7,"False Start",1
-"769",2024,"LAC",7,"Illegal Contact",1
-"770",2024,"LAC",7,"Offensive Holding",1
-"771",2024,"LAC",7,NA,75
-"772",2024,"LAC",8,"Defensive Pass Interference",1
-"773",2024,"LAC",8,"False Start",1
-"774",2024,"LAC",8,"Offensive Holding",1
-"775",2024,"LAC",8,NA,81
-"776",2024,"LV",1,"Defensive Offside",1
-"777",2024,"LV",1,"Offensive Holding",1
-"778",2024,"LV",1,"Unnecessary Roughness",1
-"779",2024,"LV",1,NA,71
-"780",2024,"LV",2,"Defensive Pass Interference",2
-"781",2024,"LV",2,"Face Mask",1
-"782",2024,"LV",2,"Unnecessary Roughness",1
-"783",2024,"LV",2,NA,75
-"784",2024,"LV",3,"Defensive Pass Interference",2
-"785",2024,"LV",3,"Defensive Too Many Men on Field",1
-"786",2024,"LV",3,"Kickoff Short of Landing Zone",1
-"787",2024,"LV",3,"Offensive Holding",1
-"788",2024,"LV",3,"Offensive Pass Interference",1
-"789",2024,"LV",3,"Player Out of Bounds on Kick",1
-"790",2024,"LV",3,NA,73
-"791",2024,"LV",4,"Defensive Pass Interference",1
-"792",2024,"LV",4,"False Start",1
-"793",2024,"LV",4,"Ineligible Downfield Kick",1
-"794",2024,"LV",4,"Offensive Holding",3
-"795",2024,"LV",4,"Roughing the Passer",1
-"796",2024,"LV",4,NA,69
-"797",2024,"LV",5,"Defensive Holding",1
-"798",2024,"LV",5,"Defensive Pass Interference",1
-"799",2024,"LV",5,"False Start",2
-"800",2024,"LV",5,"Intentional Grounding",1
-"801",2024,"LV",5,"Offensive Holding",1
-"802",2024,"LV",5,"Offensive Pass Interference",1
-"803",2024,"LV",5,"Unsportsmanlike Conduct",1
-"804",2024,"LV",5,NA,77
-"805",2024,"LV",6,"Ineligible Downfield Pass",1
-"806",2024,"LV",6,"Offensive Holding",1
-"807",2024,"LV",6,NA,75
-"808",2024,"LV",7,"Defensive Pass Interference",1
-"809",2024,"LV",7,"False Start",3
-"810",2024,"LV",7,"Ineligible Downfield Pass",1
-"811",2024,"LV",7,"Intentional Grounding",1
-"812",2024,"LV",7,"Offensive Holding",2
-"813",2024,"LV",7,NA,89
-"814",2024,"LV",8,"Defensive Holding",1
-"815",2024,"LV",8,"False Start",3
-"816",2024,"LV",8,"Illegal Block Above the Waist",1
-"817",2024,"LV",8,"Offensive Holding",1
-"818",2024,"LV",8,NA,68
-"819",2024,"MIA",1,"Defensive Offside",1
-"820",2024,"MIA",1,"Defensive Pass Interference",1
-"821",2024,"MIA",1,"False Start",2
-"822",2024,"MIA",1,"Illegal Formation",1
-"823",2024,"MIA",1,"Offensive Holding",3
-"824",2024,"MIA",1,"Roughing the Passer",1
-"825",2024,"MIA",1,NA,77
-"826",2024,"MIA",2,"False Start",4
-"827",2024,"MIA",2,"Offensive Holding",1
-"828",2024,"MIA",2,NA,84
-"829",2024,"MIA",3,"Defensive Pass Interference",1
-"830",2024,"MIA",3,"False Start",1
-"831",2024,"MIA",3,"Illegal Contact",1
-"832",2024,"MIA",3,"Illegal Formation",3
-"833",2024,"MIA",3,"Illegal Motion",1
-"834",2024,"MIA",3,"Illegal Shift",1
-"835",2024,"MIA",3,"Offensive Holding",2
-"836",2024,"MIA",3,"Unnecessary Roughness",2
-"837",2024,"MIA",3,NA,67
-"838",2024,"MIA",4,"Defensive Holding",1
-"839",2024,"MIA",4,"Illegal Shift",4
-"840",2024,"MIA",4,"Intentional Grounding",1
-"841",2024,"MIA",4,"Offensive Holding",1
-"842",2024,"MIA",4,"Roughing the Passer",1
-"843",2024,"MIA",4,"Taunting",1
-"844",2024,"MIA",4,"Unsportsmanlike Conduct",1
-"845",2024,"MIA",4,NA,66
-"846",2024,"MIA",5,"Defensive Pass Interference",1
-"847",2024,"MIA",5,"Defensive Too Many Men on Field",1
-"848",2024,"MIA",5,"False Start",1
-"849",2024,"MIA",5,"Horse Collar Tackle",1
-"850",2024,"MIA",5,"Offensive Holding",3
-"851",2024,"MIA",5,"Roughing the Passer",1
-"852",2024,"MIA",5,NA,83
-"853",2024,"MIA",7,"Defensive Offside",1
-"854",2024,"MIA",7,"Delay of Game",1
-"855",2024,"MIA",7,"Face Mask",1
-"856",2024,"MIA",7,"False Start",1
-"857",2024,"MIA",7,"Low Block",1
-"858",2024,"MIA",7,"Offensive Holding",1
-"859",2024,"MIA",7,NA,79
-"860",2024,"MIA",8,"Offensive Holding",1
-"861",2024,"MIA",8,NA,78
-"862",2024,"MIN",1,"Defensive Pass Interference",1
-"863",2024,"MIN",1,"Face Mask",1
-"864",2024,"MIN",1,"False Start",1
-"865",2024,"MIN",1,"Illegal Formation",1
-"866",2024,"MIN",1,"Offensive Holding",3
-"867",2024,"MIN",1,"Unnecessary Roughness",1
-"868",2024,"MIN",1,NA,60
-"869",2024,"MIN",2,"False Start",2
-"870",2024,"MIN",2,"Intentional Grounding",1
-"871",2024,"MIN",2,NA,66
-"872",2024,"MIN",3,"Defensive Pass Interference",1
-"873",2024,"MIN",3,"False Start",2
-"874",2024,"MIN",3,"Illegal Motion",1
-"875",2024,"MIN",3,"Offensive Pass Interference",1
-"876",2024,"MIN",3,"Roughing the Passer",1
-"877",2024,"MIN",3,NA,74
-"878",2024,"MIN",4,"Defensive Holding",1
-"879",2024,"MIN",4,"Defensive Offside",1
-"880",2024,"MIN",4,"Defensive Pass Interference",1
-"881",2024,"MIN",4,"Delay of Game",2
-"882",2024,"MIN",4,"Face Mask",1
-"883",2024,"MIN",4,"False Start",2
-"884",2024,"MIN",4,"Offensive Holding",1
-"885",2024,"MIN",4,NA,80
-"886",2024,"MIN",5,"Defensive Holding",1
-"887",2024,"MIN",5,"Defensive Pass Interference",3
-"888",2024,"MIN",5,"Delay of Game",1
-"889",2024,"MIN",5,"Fair Catch Interference",1
-"890",2024,"MIN",5,"False Start",2
-"891",2024,"MIN",5,"Illegal Block Above the Waist",1
-"892",2024,"MIN",5,"Illegal Contact",1
-"893",2024,"MIN",5,"Illegal Formation",1
-"894",2024,"MIN",5,"Illegal Shift",1
-"895",2024,"MIN",5,"Neutral Zone Infraction",1
-"896",2024,"MIN",5,NA,80
-"897",2024,"MIN",7,"Defensive Holding",1
-"898",2024,"MIN",7,"False Start",1
-"899",2024,"MIN",7,"Illegal Contact",1
-"900",2024,"MIN",7,"Illegal Formation",3
-"901",2024,"MIN",7,"Offensive Holding",3
-"902",2024,"MIN",7,"Offensive Offside",1
-"903",2024,"MIN",7,NA,67
-"904",2024,"MIN",8,"False Start",2
-"905",2024,"MIN",8,NA,63
-"906",2024,"NE",1,"Defensive Offside",1
-"907",2024,"NE",1,"Delay of Game",1
-"908",2024,"NE",1,"False Start",1
-"909",2024,"NE",1,NA,79
-"910",2024,"NE",2,"Defensive Pass Interference",1
-"911",2024,"NE",2,"Illegal Contact",1
-"912",2024,"NE",2,"Offensive Holding",1
-"913",2024,"NE",2,NA,84
-"914",2024,"NE",3,"Defensive Pass Interference",1
-"915",2024,"NE",3,"Face Mask",1
-"916",2024,"NE",3,"Offensive Holding",1
-"917",2024,"NE",3,"Unnecessary Roughness",1
-"918",2024,"NE",3,NA,60
-"919",2024,"NE",4,"Defensive Pass Interference",1
-"920",2024,"NE",4,"Defensive Too Many Men on Field",1
-"921",2024,"NE",4,"Delay of Game",1
-"922",2024,"NE",4,"Illegal Block Above the Waist",1
-"923",2024,"NE",4,NA,77
-"924",2024,"NE",5,"Defensive Holding",1
-"925",2024,"NE",5,"Delay of Game",1
-"926",2024,"NE",5,"False Start",2
-"927",2024,"NE",5,"Offensive Holding",5
-"928",2024,"NE",5,"Roughing the Passer",1
-"929",2024,"NE",5,NA,71
-"930",2024,"NE",6,"Defensive Pass Interference",1
-"931",2024,"NE",6,"False Start",3
-"932",2024,"NE",6,"Illegal Use of Hands",1
-"933",2024,"NE",6,"Ineligible Downfield Pass",1
-"934",2024,"NE",6,NA,81
-"935",2024,"NE",7,"Defensive Offside",2
-"936",2024,"NE",7,"Defensive Pass Interference",1
-"937",2024,"NE",7,"False Start",3
-"938",2024,"NE",7,"Illegal Shift",1
-"939",2024,"NE",7,"Neutral Zone Infraction",1
-"940",2024,"NE",7,"Offensive Holding",1
-"941",2024,"NE",7,NA,69
-"942",2024,"NE",8,"Defensive Holding",1
-"943",2024,"NE",8,"Defensive Offside",1
-"944",2024,"NE",8,"Neutral Zone Infraction",1
-"945",2024,"NE",8,"Offensive Holding",2
-"946",2024,"NE",8,"Roughing the Passer",1
-"947",2024,"NE",8,NA,76
-"948",2024,"NO",1,"Defensive Pass Interference",1
-"949",2024,"NO",1,"Delay of Game",1
-"950",2024,"NO",1,"Illegal Formation",1
-"951",2024,"NO",1,"Kick Catch Interference",1
-"952",2024,"NO",1,"Offensive Holding",3
-"953",2024,"NO",1,"Unnecessary Roughness",2
-"954",2024,"NO",1,NA,72
-"955",2024,"NO",2,"Defensive Pass Interference",1
-"956",2024,"NO",2,"Ineligible Downfield Pass",1
-"957",2024,"NO",2,"Offensive Holding",1
-"958",2024,"NO",2,"Unnecessary Roughness",1
-"959",2024,"NO",2,NA,69
-"960",2024,"NO",3,"Encroachment",1
-"961",2024,"NO",3,"False Start",1
-"962",2024,"NO",3,"Unnecessary Roughness",1
-"963",2024,"NO",3,NA,65
-"964",2024,"NO",4,"Defensive Holding",1
-"965",2024,"NO",4,"Defensive Offside",1
-"966",2024,"NO",4,"False Start",2
-"967",2024,"NO",4,"Illegal Formation",1
-"968",2024,"NO",4,"Illegal Motion",1
-"969",2024,"NO",4,"Offensive Holding",1
-"970",2024,"NO",4,"Unnecessary Roughness",1
-"971",2024,"NO",4,NA,84
-"972",2024,"NO",5,"Defensive Offside",1
-"973",2024,"NO",5,"False Start",1
-"974",2024,"NO",5,"Illegal Shift",1
-"975",2024,"NO",5,"Unnecessary Roughness",1
-"976",2024,"NO",5,NA,65
-"977",2024,"NO",6,"Defensive Holding",2
-"978",2024,"NO",6,"Defensive Pass Interference",1
-"979",2024,"NO",6,"Face Mask",1
-"980",2024,"NO",6,"Illegal Shift",1
-"981",2024,"NO",6,NA,88
-"982",2024,"NO",7,"Defensive Offside",1
-"983",2024,"NO",7,"Defensive Pass Interference",1
-"984",2024,"NO",7,"False Start",1
-"985",2024,"NO",7,"Illegal Formation",1
-"986",2024,"NO",7,"Illegal Use of Hands",1
-"987",2024,"NO",7,"Neutral Zone Infraction",1
-"988",2024,"NO",7,"Offensive Holding",1
-"989",2024,"NO",7,NA,81
-"990",2024,"NO",8,"False Start",1
-"991",2024,"NO",8,"Illegal Block Above the Waist",1
-"992",2024,"NO",8,"Ineligible Downfield Pass",1
-"993",2024,"NO",8,"Offensive Holding",3
-"994",2024,"NO",8,"Roughing the Passer",1
-"995",2024,"NO",8,"Unnecessary Roughness",1
-"996",2024,"NO",8,NA,86
-"997",2024,"NYG",1,"Defensive Pass Interference",1
-"998",2024,"NYG",1,"Delay of Game",2
-"999",2024,"NYG",1,"False Start",1
-"1000",2024,"NYG",1,"Offensive Holding",3
-"1001",2024,"NYG",1,"Offensive Too Many Men on Field",1
-"1002",2024,"NYG",1,NA,81
-"1003",2024,"NYG",2,"Defensive Offside",1
-"1004",2024,"NYG",2,"Defensive Pass Interference",1
-"1005",2024,"NYG",2,"False Start",1
-"1006",2024,"NYG",2,"Illegal Shift",1
-"1007",2024,"NYG",2,"Unsportsmanlike Conduct",1
-"1008",2024,"NYG",2,NA,63
-"1009",2024,"NYG",3,"Defensive Offside",1
-"1010",2024,"NYG",3,"False Start",3
-"1011",2024,"NYG",3,"Offensive Holding",3
-"1012",2024,"NYG",3,"Roughing the Passer",1
-"1013",2024,"NYG",3,NA,83
-"1014",2024,"NYG",4,"Defensive Offside",1
-"1015",2024,"NYG",4,"Defensive Too Many Men on Field",1
-"1016",2024,"NYG",4,"Face Mask",1
-"1017",2024,"NYG",4,"Illegal Shift",1
-"1018",2024,"NYG",4,"Ineligible Downfield Pass",1
-"1019",2024,"NYG",4,"Neutral Zone Infraction",1
-"1020",2024,"NYG",4,"Offensive Holding",1
-"1021",2024,"NYG",4,NA,76
-"1022",2024,"NYG",5,"Defensive Holding",2
-"1023",2024,"NYG",5,"Unsportsmanlike Conduct",1
-"1024",2024,"NYG",5,NA,84
-"1025",2024,"NYG",6,"Defensive Holding",1
-"1026",2024,"NYG",6,"Defensive Pass Interference",2
-"1027",2024,"NYG",6,"Illegal Shift",1
-"1028",2024,"NYG",6,"Ineligible Downfield Pass",1
-"1029",2024,"NYG",6,"Offensive Holding",1
-"1030",2024,"NYG",6,NA,85
-"1031",2024,"NYG",7,"Defensive Offside",1
-"1032",2024,"NYG",7,"Encroachment",1
-"1033",2024,"NYG",7,"False Start",1
-"1034",2024,"NYG",7,"Illegal Block Above the Waist",1
-"1035",2024,"NYG",7,"Illegal Formation",1
-"1036",2024,"NYG",7,"Ineligible Downfield Pass",1
-"1037",2024,"NYG",7,"Offensive Pass Interference",1
-"1038",2024,"NYG",7,NA,72
-"1039",2024,"NYG",8,"Delay of Game",2
-"1040",2024,"NYG",8,"False Start",2
-"1041",2024,"NYG",8,"Illegal Shift",2
-"1042",2024,"NYG",8,"Ineligible Downfield Pass",1
-"1043",2024,"NYG",8,"Offensive Holding",2
-"1044",2024,"NYG",8,"Roughing the Passer",1
-"1045",2024,"NYG",8,NA,82
-"1046",2024,"NYJ",1,"Illegal Touch Pass",1
-"1047",2024,"NYJ",1,"Unnecessary Roughness",1
-"1048",2024,"NYJ",1,NA,62
-"1049",2024,"NYJ",2,"Defensive Delay of Game",1
-"1050",2024,"NYJ",2,"Delay of Game",1
-"1051",2024,"NYJ",2,"Intentional Grounding",1
-"1052",2024,"NYJ",2,"Roughing the Passer",1
-"1053",2024,"NYJ",2,NA,71
-"1054",2024,"NYJ",3,"False Start",1
-"1055",2024,"NYJ",3,"Illegal Motion",1
-"1056",2024,"NYJ",3,"Leverage",1
-"1057",2024,"NYJ",3,"Offensive Holding",2
-"1058",2024,"NYJ",3,"Roughing the Passer",1
-"1059",2024,"NYJ",3,"Unnecessary Roughness",3
-"1060",2024,"NYJ",3,NA,77
-"1061",2024,"NYJ",4,"Defensive Pass Interference",2
-"1062",2024,"NYJ",4,"False Start",5
-"1063",2024,"NYJ",4,"Ineligible Downfield Pass",1
-"1064",2024,"NYJ",4,"Kick Catch Interference",1
-"1065",2024,"NYJ",4,"Offensive Holding",1
-"1066",2024,"NYJ",4,"Unsportsmanlike Conduct",1
-"1067",2024,"NYJ",4,NA,84
-"1068",2024,"NYJ",5,"Defensive Pass Interference",1
-"1069",2024,"NYJ",5,"Delay of Game",2
-"1070",2024,"NYJ",5,"Illegal Block Above the Waist",1
-"1071",2024,"NYJ",5,"Offensive Holding",1
-"1072",2024,"NYJ",5,"Roughing the Kicker",1
-"1073",2024,"NYJ",5,NA,84
-"1074",2024,"NYJ",6,"Defensive Pass Interference",1
-"1075",2024,"NYJ",6,"Delay of Game",1
-"1076",2024,"NYJ",6,"False Start",1
-"1077",2024,"NYJ",6,"Low Block",1
-"1078",2024,"NYJ",6,"Offensive Holding",4
-"1079",2024,"NYJ",6,"Unnecessary Roughness",1
-"1080",2024,"NYJ",6,NA,70
-"1081",2024,"NYJ",7,"False Start",3
-"1082",2024,"NYJ",7,"Leverage",1
-"1083",2024,"NYJ",7,"Offensive Holding",1
-"1084",2024,"NYJ",7,"Unnecessary Roughness",1
-"1085",2024,"NYJ",7,NA,70
-"1086",2024,"NYJ",8,"Defensive Holding",1
-"1087",2024,"NYJ",8,"Defensive Pass Interference",2
-"1088",2024,"NYJ",8,"Delay of Game",2
-"1089",2024,"NYJ",8,"Illegal Use of Hands",1
-"1090",2024,"NYJ",8,"Ineligible Downfield Pass",1
-"1091",2024,"NYJ",8,NA,72
-"1092",2024,"PHI",1,"Defensive Holding",2
-"1093",2024,"PHI",1,"Encroachment",1
-"1094",2024,"PHI",1,"False Start",1
-"1095",2024,"PHI",1,"Illegal Formation",1
-"1096",2024,"PHI",1,NA,90
-"1097",2024,"PHI",2,"Delay of Game",2
-"1098",2024,"PHI",2,"Ineligible Downfield Pass",3
-"1099",2024,"PHI",2,"Offensive Holding",2
-"1100",2024,"PHI",2,NA,79
-"1101",2024,"PHI",3,"False Start",2
-"1102",2024,"PHI",3,"Illegal Formation",1
-"1103",2024,"PHI",3,"Illegal Use of Hands",1
-"1104",2024,"PHI",3,"Offensive Holding",2
-"1105",2024,"PHI",3,"Offensive Too Many Men on Field",1
-"1106",2024,"PHI",3,NA,77
-"1107",2024,"PHI",4,"Defensive Holding",1
-"1108",2024,"PHI",4,"False Start",1
-"1109",2024,"PHI",4,"Offensive Holding",1
-"1110",2024,"PHI",4,NA,69
-"1111",2024,"PHI",6,"False Start",3
-"1112",2024,"PHI",6,NA,77
-"1113",2024,"PHI",7,"Defensive Offside",1
-"1114",2024,"PHI",7,"False Start",1
-"1115",2024,"PHI",7,"Player Out of Bounds on Kick",1
-"1116",2024,"PHI",7,"Roughing the Kicker",1
-"1117",2024,"PHI",7,NA,79
-"1118",2024,"PHI",8,"False Start",1
-"1119",2024,"PHI",8,"Illegal Use of Hands",1
-"1120",2024,"PHI",8,"Offensive Holding",2
-"1121",2024,"PHI",8,"Unnecessary Roughness",1
-"1122",2024,"PHI",8,NA,71
-"1123",2024,"PIT",1,"Defensive Holding",1
-"1124",2024,"PIT",1,"False Start",2
-"1125",2024,"PIT",1,"Illegal Shift",1
-"1126",2024,"PIT",1,"Offensive Holding",1
-"1127",2024,"PIT",1,"Offensive Pass Interference",1
-"1128",2024,"PIT",1,NA,78
-"1129",2024,"PIT",2,"Defensive Holding",1
-"1130",2024,"PIT",2,"Defensive Pass Interference",2
-"1131",2024,"PIT",2,"False Start",1
-"1132",2024,"PIT",2,"Neutral Zone Infraction",1
-"1133",2024,"PIT",2,"Offensive Holding",6
-"1134",2024,"PIT",2,"Offensive Pass Interference",1
-"1135",2024,"PIT",2,"Unnecessary Roughness",1
-"1136",2024,"PIT",2,NA,69
-"1137",2024,"PIT",3,"Defensive Holding",1
-"1138",2024,"PIT",3,"Face Mask",1
-"1139",2024,"PIT",3,"Illegal Formation",2
-"1140",2024,"PIT",3,"Roughing the Passer",1
-"1141",2024,"PIT",3,"Unnecessary Roughness",1
-"1142",2024,"PIT",3,NA,76
-"1143",2024,"PIT",4,"Defensive Offside",1
-"1144",2024,"PIT",4,"Delay of Game",1
-"1145",2024,"PIT",4,"False Start",1
-"1146",2024,"PIT",4,"Roughing the Passer",2
-"1147",2024,"PIT",4,"Unnecessary Roughness",1
-"1148",2024,"PIT",4,NA,79
-"1149",2024,"PIT",5,"Defensive Holding",1
-"1150",2024,"PIT",5,"False Start",3
-"1151",2024,"PIT",5,"Illegal Use of Hands",1
-"1152",2024,"PIT",5,"Offensive Holding",1
-"1153",2024,"PIT",5,"Roughing the Passer",1
-"1154",2024,"PIT",5,"Unnecessary Roughness",1
-"1155",2024,"PIT",5,NA,70
-"1156",2024,"PIT",6,"Delay of Game",2
-"1157",2024,"PIT",6,"False Start",1
-"1158",2024,"PIT",6,"Illegal Forward Pass",1
-"1159",2024,"PIT",6,"Offensive Holding",3
-"1160",2024,"PIT",6,"Roughing the Passer",2
-"1161",2024,"PIT",6,NA,75
-"1162",2024,"PIT",7,"Defensive Pass Interference",1
-"1163",2024,"PIT",7,"Offensive Holding",2
-"1164",2024,"PIT",7,NA,81
-"1165",2024,"PIT",8,"Defensive Holding",1
-"1166",2024,"PIT",8,"Defensive Too Many Men on Field",1
-"1167",2024,"PIT",8,"Face Mask",1
-"1168",2024,"PIT",8,"False Start",2
-"1169",2024,"PIT",8,"Offensive Holding",1
-"1170",2024,"PIT",8,NA,79
-"1171",2024,"SEA",1,"Defensive Offside",1
-"1172",2024,"SEA",1,"Defensive Pass Interference",2
-"1173",2024,"SEA",1,"False Start",2
-"1174",2024,"SEA",1,"Neutral Zone Infraction",1
-"1175",2024,"SEA",1,"Offensive Holding",3
-"1176",2024,"SEA",1,"Offensive Pass Interference",1
-"1177",2024,"SEA",1,"Roughing the Passer",1
-"1178",2024,"SEA",1,NA,75
-"1179",2024,"SEA",2,"Defensive Pass Interference",2
-"1180",2024,"SEA",2,"Delay of Game",1
-"1181",2024,"SEA",2,"False Start",1
-"1182",2024,"SEA",2,"Offensive Holding",1
-"1183",2024,"SEA",2,"Unnecessary Roughness",1
-"1184",2024,"SEA",2,NA,81
-"1185",2024,"SEA",3,"Face Mask",1
-"1186",2024,"SEA",3,"False Start",3
-"1187",2024,"SEA",3,"Illegal Formation",1
-"1188",2024,"SEA",3,"Intentional Grounding",1
-"1189",2024,"SEA",3,"Offensive Holding",3
-"1190",2024,"SEA",3,"Offensive Pass Interference",1
-"1191",2024,"SEA",3,NA,70
-"1192",2024,"SEA",4,"Defensive Holding",3
-"1193",2024,"SEA",4,"Defensive Offside",1
-"1194",2024,"SEA",4,"Defensive Pass Interference",3
-"1195",2024,"SEA",4,"Defensive Too Many Men on Field",1
-"1196",2024,"SEA",4,"Face Mask",1
-"1197",2024,"SEA",4,"False Start",1
-"1198",2024,"SEA",4,"Offensive Holding",3
-"1199",2024,"SEA",4,"Offensive Pass Interference",1
-"1200",2024,"SEA",4,"Roughing the Passer",1
-"1201",2024,"SEA",4,NA,92
-"1202",2024,"SEA",5,"Delay of Game",1
-"1203",2024,"SEA",5,"False Start",3
-"1204",2024,"SEA",5,"Illegal Use of Hands",1
-"1205",2024,"SEA",5,NA,75
-"1206",2024,"SEA",6,"Defensive Offside",1
-"1207",2024,"SEA",6,"Defensive Pass Interference",1
-"1208",2024,"SEA",6,"False Start",2
-"1209",2024,"SEA",6,"Illegal Shift",1
-"1210",2024,"SEA",6,"Offensive Holding",2
-"1211",2024,"SEA",6,NA,90
-"1212",2024,"SEA",7,"Defensive Pass Interference",1
-"1213",2024,"SEA",7,"False Start",2
-"1214",2024,"SEA",7,"Illegal Use of Hands",1
-"1215",2024,"SEA",7,"Intentional Grounding",1
-"1216",2024,"SEA",7,"Neutral Zone Infraction",1
-"1217",2024,"SEA",7,"Offensive Holding",1
-"1218",2024,"SEA",7,"Roughing the Passer",1
-"1219",2024,"SEA",7,NA,69
-"1220",2024,"SEA",8,"Defensive Pass Interference",1
-"1221",2024,"SEA",8,"Delay of Game",2
-"1222",2024,"SEA",8,"False Start",1
-"1223",2024,"SEA",8,"Illegal Blindside Block",1
-"1224",2024,"SEA",8,"Illegal Contact",1
-"1225",2024,"SEA",8,"Ineligible Downfield Pass",1
-"1226",2024,"SEA",8,"Neutral Zone Infraction",1
-"1227",2024,"SEA",8,"Offensive Holding",1
-"1228",2024,"SEA",8,"Taunting",1
-"1229",2024,"SEA",8,NA,58
-"1230",2024,"SF",1,"Defensive Holding",1
-"1231",2024,"SF",1,"False Start",1
-"1232",2024,"SF",1,"Illegal Use of Hands",1
-"1233",2024,"SF",1,"Offensive Holding",2
-"1234",2024,"SF",1,NA,84
-"1235",2024,"SF",2,"Defensive Offside",2
-"1236",2024,"SF",2,"False Start",2
-"1237",2024,"SF",2,"Illegal Block Above the Waist",1
-"1238",2024,"SF",2,"Illegal Formation",1
-"1239",2024,"SF",2,"Offensive Holding",1
-"1240",2024,"SF",2,"Roughing the Passer",1
-"1241",2024,"SF",2,NA,77
-"1242",2024,"SF",3,"Defensive Holding",1
-"1243",2024,"SF",3,"Defensive Pass Interference",1
-"1244",2024,"SF",3,"Face Mask",1
-"1245",2024,"SF",3,"Illegal Block Above the Waist",1
-"1246",2024,"SF",3,"Illegal Contact",1
-"1247",2024,"SF",3,"Ineligible Downfield Pass",1
-"1248",2024,"SF",3,"Offensive Holding",2
-"1249",2024,"SF",3,NA,78
-"1250",2024,"SF",4,"Defensive Too Many Men on Field",1
-"1251",2024,"SF",4,"False Start",1
-"1252",2024,"SF",4,"Illegal Shift",2
-"1253",2024,"SF",4,"Offensive Holding",1
-"1254",2024,"SF",4,NA,72
-"1255",2024,"SF",5,"False Start",1
-"1256",2024,"SF",5,"Offensive Holding",1
-"1257",2024,"SF",5,NA,75
-"1258",2024,"SF",6,"Defensive Offside",1
-"1259",2024,"SF",6,"Face Mask",2
-"1260",2024,"SF",6,"False Start",1
-"1261",2024,"SF",6,"Illegal Formation",1
-"1262",2024,"SF",6,"Illegal Shift",1
-"1263",2024,"SF",6,"Offensive Holding",1
-"1264",2024,"SF",6,NA,76
-"1265",2024,"SF",7,"Defensive Holding",1
-"1266",2024,"SF",7,"Defensive Pass Interference",2
-"1267",2024,"SF",7,"Face Mask",1
-"1268",2024,"SF",7,"Offensive Holding",2
-"1269",2024,"SF",7,NA,69
-"1270",2024,"SF",8,"False Start",1
-"1271",2024,"SF",8,"Illegal Formation",2
-"1272",2024,"SF",8,"Kickoff Short of Landing Zone",1
-"1273",2024,"SF",8,"Offensive Holding",3
-"1274",2024,"SF",8,NA,78
-"1275",2024,"TB",1,"Defensive Pass Interference",1
-"1276",2024,"TB",1,"Defensive Too Many Men on Field",1
-"1277",2024,"TB",1,"False Start",3
-"1278",2024,"TB",1,"Illegal Use of Hands",1
-"1279",2024,"TB",1,"Offensive Holding",1
-"1280",2024,"TB",1,NA,75
-"1281",2024,"TB",2,"Defensive Pass Interference",1
-"1282",2024,"TB",2,"Face Mask",1
-"1283",2024,"TB",2,"False Start",1
-"1284",2024,"TB",2,NA,61
-"1285",2024,"TB",3,"Defensive Pass Interference",1
-"1286",2024,"TB",3,"False Start",1
-"1287",2024,"TB",3,"Illegal Block Above the Waist",1
-"1288",2024,"TB",3,NA,68
-"1289",2024,"TB",4,"Defensive Holding",1
-"1290",2024,"TB",4,"Defensive Pass Interference",1
-"1291",2024,"TB",4,"Encroachment",1
-"1292",2024,"TB",4,"False Start",1
-"1293",2024,"TB",4,"Offensive Holding",1
-"1294",2024,"TB",4,NA,90
-"1295",2024,"TB",5,"Offensive Holding",2
-"1296",2024,"TB",5,"Unnecessary Roughness",1
-"1297",2024,"TB",5,NA,64
-"1298",2024,"TB",6,"Defensive Offside",1
-"1299",2024,"TB",6,"Defensive Pass Interference",1
-"1300",2024,"TB",6,"Delay of Game",1
-"1301",2024,"TB",6,"False Start",2
-"1302",2024,"TB",6,"Illegal Formation",1
-"1303",2024,"TB",6,"Offensive Holding",1
-"1304",2024,"TB",6,"Offensive Pass Interference",1
-"1305",2024,"TB",6,"Offensive Too Many Men on Field",1
-"1306",2024,"TB",6,"Taunting",1
-"1307",2024,"TB",6,"Unnecessary Roughness",3
-"1308",2024,"TB",6,"Unsportsmanlike Conduct",1
-"1309",2024,"TB",6,NA,83
-"1310",2024,"TB",7,"Defensive Holding",1
-"1311",2024,"TB",7,"Face Mask",1
-"1312",2024,"TB",7,"False Start",3
-"1313",2024,"TB",7,"Offensive Holding",1
-"1314",2024,"TB",7,"Roughing the Passer",1
-"1315",2024,"TB",7,NA,93
-"1316",2024,"TB",8,"False Start",3
-"1317",2024,"TB",8,"Offensive Holding",1
-"1318",2024,"TB",8,"Taunting",1
-"1319",2024,"TB",8,"Unnecessary Roughness",1
-"1320",2024,"TB",8,NA,86
-"1321",2024,"TEN",1,"Defensive Offside",1
-"1322",2024,"TEN",1,"False Start",3
-"1323",2024,"TEN",1,"Illegal Block Above the Waist",1
-"1324",2024,"TEN",1,"Illegal Formation",1
-"1325",2024,"TEN",1,"Offensive Holding",1
-"1326",2024,"TEN",1,NA,76
-"1327",2024,"TEN",2,"Defensive Holding",1
-"1328",2024,"TEN",2,"Defensive Offside",1
-"1329",2024,"TEN",2,"False Start",1
-"1330",2024,"TEN",2,"Horse Collar Tackle",1
-"1331",2024,"TEN",2,"Offensive Holding",2
-"1332",2024,"TEN",2,"Roughing the Passer",1
-"1333",2024,"TEN",2,"Unnecessary Roughness",1
-"1334",2024,"TEN",2,NA,72
-"1335",2024,"TEN",3,"Defensive Offside",1
-"1336",2024,"TEN",3,"Neutral Zone Infraction",1
-"1337",2024,"TEN",3,"Offensive Holding",2
-"1338",2024,"TEN",3,NA,65
-"1339",2024,"TEN",4,"Defensive Pass Interference",1
-"1340",2024,"TEN",4,"Face Mask",1
-"1341",2024,"TEN",4,"False Start",3
-"1342",2024,"TEN",4,"Offensive Holding",1
-"1343",2024,"TEN",4,"Roughing the Passer",1
-"1344",2024,"TEN",4,"Unsportsmanlike Conduct",1
-"1345",2024,"TEN",4,NA,78
-"1346",2024,"TEN",6,"Defensive Holding",1
-"1347",2024,"TEN",6,"Delay of Game",1
-"1348",2024,"TEN",6,"False Start",2
-"1349",2024,"TEN",6,"Illegal Contact",1
-"1350",2024,"TEN",6,"Illegal Formation",1
-"1351",2024,"TEN",6,"Neutral Zone Infraction",1
-"1352",2024,"TEN",6,"Offensive Holding",2
-"1353",2024,"TEN",6,NA,68
-"1354",2024,"TEN",7,"Defensive Offside",1
-"1355",2024,"TEN",7,"Defensive Pass Interference",1
-"1356",2024,"TEN",7,"False Start",3
-"1357",2024,"TEN",7,"Illegal Contact",1
-"1358",2024,"TEN",7,"Illegal Shift",1
-"1359",2024,"TEN",7,"Offensive Holding",1
-"1360",2024,"TEN",7,"Unnecessary Roughness",1
-"1361",2024,"TEN",7,NA,83
-"1362",2024,"TEN",8,"Defensive Pass Interference",2
-"1363",2024,"TEN",8,"False Start",1
-"1364",2024,"TEN",8,"Illegal Formation",1
-"1365",2024,"TEN",8,"Offensive Holding",3
-"1366",2024,"TEN",8,"Offensive Pass Interference",1
-"1367",2024,"TEN",8,NA,89
-"1368",2024,"WAS",1,"Defensive Holding",1
-"1369",2024,"WAS",1,"Defensive Pass Interference",1
-"1370",2024,"WAS",1,"Illegal Block Above the Waist",1
-"1371",2024,"WAS",1,"Illegal Formation",1
-"1372",2024,"WAS",1,"Unnecessary Roughness",1
-"1373",2024,"WAS",1,NA,69
-"1374",2024,"WAS",2,"Defensive Holding",2
-"1375",2024,"WAS",2,"False Start",5
-"1376",2024,"WAS",2,"Ineligible Downfield Pass",1
-"1377",2024,"WAS",2,"Kickoff Short of Landing Zone",1
-"1378",2024,"WAS",2,"Offensive Holding",1
-"1379",2024,"WAS",2,NA,80
-"1380",2024,"WAS",3,"Defensive Offside",1
-"1381",2024,"WAS",3,"Defensive Too Many Men on Field",1
-"1382",2024,"WAS",3,"False Start",2
-"1383",2024,"WAS",3,"Illegal Formation",1
-"1384",2024,"WAS",3,"Illegal Use of Hands",1
-"1385",2024,"WAS",3,NA,70
-"1386",2024,"WAS",4,"Defensive Pass Interference",1
-"1387",2024,"WAS",4,"Illegal Formation",1
-"1388",2024,"WAS",4,"Offensive Holding",1
-"1389",2024,"WAS",4,"Offensive Too Many Men on Field",1
-"1390",2024,"WAS",4,"Taunting",2
-"1391",2024,"WAS",4,"Unnecessary Roughness",1
-"1392",2024,"WAS",4,NA,77
-"1393",2024,"WAS",5,"Defensive Holding",1
-"1394",2024,"WAS",5,"Defensive Too Many Men on Field",1
-"1395",2024,"WAS",5,"Delay of Game",1
-"1396",2024,"WAS",5,"Illegal Shift",1
-"1397",2024,"WAS",5,"Offensive Holding",1
-"1398",2024,"WAS",5,NA,77
-"1399",2024,"WAS",6,"Defensive Pass Interference",1
-"1400",2024,"WAS",6,"False Start",1
-"1401",2024,"WAS",6,"Illegal Formation",1
-"1402",2024,"WAS",6,"Offensive Holding",1
-"1403",2024,"WAS",6,NA,74
-"1404",2024,"WAS",7,"Defensive Holding",2
-"1405",2024,"WAS",7,"Defensive Pass Interference",1
-"1406",2024,"WAS",7,"False Start",3
-"1407",2024,"WAS",7,"Ineligible Downfield Pass",1
-"1408",2024,"WAS",7,"Neutral Zone Infraction",1
-"1409",2024,"WAS",7,"Offensive Holding",2
-"1410",2024,"WAS",7,NA,75
-"1411",2024,"WAS",8,"Defensive Holding",1
-"1412",2024,"WAS",8,"False Start",2
-"1413",2024,"WAS",8,"Ineligible Downfield Pass",2
-"1414",2024,"WAS",8,"Unnecessary Roughness",1
-"1415",2024,"WAS",8,NA,86
-"1416",2024,NA,1,NA,154
-"1417",2024,NA,2,NA,177
-"1418",2024,NA,3,NA,155
-"1419",2024,NA,4,NA,142
-"1420",2024,NA,5,NA,135
-"1421",2024,NA,6,NA,114
-"1422",2024,NA,7,NA,138
-"1423",2024,NA,8,NA,160
+"","season","posteam","week","plays","inelg_pass","ill_shift"
+"1",2024,"ARI",1,76,0,0
+"2",2024,"ARI",2,80,0,0
+"3",2024,"ARI",3,72,0,0
+"4",2024,"ARI",4,73,0,0
+"5",2024,"ARI",5,75,0,0
+"6",2024,"ARI",6,75,0,0
+"7",2024,"ARI",7,74,0,0
+"8",2024,"ARI",8,83,1,0
+"9",2024,"ATL",1,70,0,0
+"10",2024,"ATL",2,74,0,0
+"11",2024,"ATL",3,76,0,0
+"12",2024,"ATL",4,73,0,0
+"13",2024,"ATL",5,110,0,0
+"14",2024,"ATL",6,83,0,0
+"15",2024,"ATL",7,93,0,0
+"16",2024,"ATL",8,76,0,0
+"17",2024,"BAL",1,96,0,0
+"18",2024,"BAL",2,89,0,0
+"19",2024,"BAL",3,82,0,0
+"20",2024,"BAL",4,72,0,0
+"21",2024,"BAL",5,95,0,0
+"22",2024,"BAL",6,84,0,0
+"23",2024,"BAL",7,76,1,0
+"24",2024,"BAL",8,88,0,0
+"25",2024,"BUF",1,81,0,0
+"26",2024,"BUF",2,61,0,0
+"27",2024,"BUF",3,78,1,0
+"28",2024,"BUF",4,77,0,0
+"29",2024,"BUF",5,82,0,0
+"30",2024,"BUF",6,87,0,0
+"31",2024,"BUF",7,71,0,0
+"32",2024,"BUF",8,94,0,0
+"33",2024,"CAR",1,79,0,0
+"34",2024,"CAR",2,65,0,0
+"35",2024,"CAR",3,93,0,0
+"36",2024,"CAR",4,88,0,0
+"37",2024,"CAR",5,76,0,0
+"38",2024,"CAR",6,86,0,1
+"39",2024,"CAR",7,62,0,0
+"40",2024,"CAR",8,78,0,0
+"41",2024,"CHI",1,76,0,0
+"42",2024,"CHI",2,90,0,0
+"43",2024,"CHI",3,104,0,0
+"44",2024,"CHI",4,79,0,0
+"45",2024,"CHI",5,90,0,1
+"46",2024,"CHI",6,80,0,1
+"47",2024,"CHI",8,81,0,0
+"48",2024,"CIN",1,61,0,0
+"49",2024,"CIN",2,81,0,0
+"50",2024,"CIN",3,77,0,0
+"51",2024,"CIN",4,83,0,0
+"52",2024,"CIN",5,92,0,0
+"53",2024,"CIN",6,66,0,0
+"54",2024,"CIN",7,74,0,0
+"55",2024,"CIN",8,71,0,0
+"56",2024,"CLE",1,98,1,1
+"57",2024,"CLE",2,88,0,2
+"58",2024,"CLE",3,82,0,0
+"59",2024,"CLE",4,73,0,1
+"60",2024,"CLE",5,87,1,0
+"61",2024,"CLE",6,76,0,0
+"62",2024,"CLE",7,98,1,2
+"63",2024,"CLE",8,86,0,0
+"64",2024,"DAL",1,85,0,0
+"65",2024,"DAL",2,87,1,0
+"66",2024,"DAL",3,97,0,0
+"67",2024,"DAL",4,72,0,0
+"68",2024,"DAL",5,93,0,0
+"69",2024,"DAL",6,85,0,0
+"70",2024,"DAL",8,81,0,0
+"71",2024,"DEN",1,93,0,0
+"72",2024,"DEN",2,77,0,0
+"73",2024,"DEN",3,81,0,0
+"74",2024,"DEN",4,77,0,0
+"75",2024,"DEN",5,86,0,1
+"76",2024,"DEN",6,71,0,0
+"77",2024,"DEN",7,82,1,0
+"78",2024,"DEN",8,87,0,0
+"79",2024,"DET",1,79,0,0
+"80",2024,"DET",2,100,0,0
+"81",2024,"DET",3,86,0,0
+"82",2024,"DET",4,69,0,0
+"83",2024,"DET",6,86,1,0
+"84",2024,"DET",7,78,0,0
+"85",2024,"DET",8,64,0,0
+"86",2024,"GB",1,86,0,1
+"87",2024,"GB",2,84,2,0
+"88",2024,"GB",3,81,0,1
+"89",2024,"GB",4,93,0,0
+"90",2024,"GB",5,78,0,0
+"91",2024,"GB",6,92,0,0
+"92",2024,"GB",7,76,0,0
+"93",2024,"GB",8,90,0,1
+"94",2024,"HOU",1,97,0,0
+"95",2024,"HOU",2,83,0,0
+"96",2024,"HOU",3,86,0,0
+"97",2024,"HOU",4,91,2,1
+"98",2024,"HOU",5,85,0,0
+"99",2024,"HOU",6,84,0,1
+"100",2024,"HOU",7,79,0,0
+"101",2024,"HOU",8,92,0,0
+"102",2024,"IND",1,59,0,0
+"103",2024,"IND",2,69,0,0
+"104",2024,"IND",3,73,1,1
+"105",2024,"IND",4,84,0,0
+"106",2024,"IND",5,93,0,0
+"107",2024,"IND",6,84,0,0
+"108",2024,"IND",7,81,0,0
+"109",2024,"IND",8,85,0,0
+"110",2024,"JAX",1,72,0,0
+"111",2024,"JAX",2,75,0,2
+"112",2024,"JAX",3,89,0,0
+"113",2024,"JAX",4,77,0,0
+"114",2024,"JAX",5,76,0,0
+"115",2024,"JAX",6,78,0,0
+"116",2024,"JAX",7,73,0,0
+"117",2024,"JAX",8,78,0,0
+"118",2024,"KC",1,70,0,0
+"119",2024,"KC",2,79,0,0
+"120",2024,"KC",3,88,0,0
+"121",2024,"KC",4,76,0,0
+"122",2024,"KC",5,98,0,0
+"123",2024,"KC",7,85,0,0
+"124",2024,"KC",8,86,0,0
+"125",2024,"LA",1,93,0,0
+"126",2024,"LA",2,67,0,0
+"127",2024,"LA",3,74,0,0
+"128",2024,"LA",4,76,0,0
+"129",2024,"LA",5,91,0,0
+"130",2024,"LA",7,72,0,0
+"131",2024,"LA",8,91,0,0
+"132",2024,"LAC",1,78,0,0
+"133",2024,"LAC",2,81,0,0
+"134",2024,"LAC",3,62,0,0
+"135",2024,"LAC",4,75,0,0
+"136",2024,"LAC",6,96,0,0
+"137",2024,"LAC",7,78,0,0
+"138",2024,"LAC",8,84,0,0
+"139",2024,"LV",1,74,0,0
+"140",2024,"LV",2,79,0,0
+"141",2024,"LV",3,80,0,0
+"142",2024,"LV",4,76,0,0
+"143",2024,"LV",5,85,0,0
+"144",2024,"LV",6,77,1,0
+"145",2024,"LV",7,97,1,0
+"146",2024,"LV",8,74,0,0
+"147",2024,"MIA",1,86,0,0
+"148",2024,"MIA",2,89,0,0
+"149",2024,"MIA",3,79,0,1
+"150",2024,"MIA",4,76,0,4
+"151",2024,"MIA",5,91,0,0
+"152",2024,"MIA",7,85,0,0
+"153",2024,"MIA",8,79,0,0
+"154",2024,"MIN",1,68,0,0
+"155",2024,"MIN",2,69,0,0
+"156",2024,"MIN",3,80,0,0
+"157",2024,"MIN",4,89,0,0
+"158",2024,"MIN",5,93,0,1
+"159",2024,"MIN",7,77,0,0
+"160",2024,"MIN",8,65,0,0
+"161",2024,"NE",1,82,0,0
+"162",2024,"NE",2,87,0,0
+"163",2024,"NE",3,64,0,0
+"164",2024,"NE",4,81,0,0
+"165",2024,"NE",5,81,0,0
+"166",2024,"NE",6,87,1,0
+"167",2024,"NE",7,78,0,1
+"168",2024,"NE",8,82,0,0
+"169",2024,"NO",1,81,0,0
+"170",2024,"NO",2,73,1,0
+"171",2024,"NO",3,68,0,0
+"172",2024,"NO",4,92,0,0
+"173",2024,"NO",5,69,0,1
+"174",2024,"NO",6,93,0,1
+"175",2024,"NO",7,88,0,0
+"176",2024,"NO",8,94,1,0
+"177",2024,"NYG",1,89,0,0
+"178",2024,"NYG",2,68,0,1
+"179",2024,"NYG",3,91,0,0
+"180",2024,"NYG",4,83,1,1
+"181",2024,"NYG",5,87,0,0
+"182",2024,"NYG",6,91,1,1
+"183",2024,"NYG",7,79,1,0
+"184",2024,"NYG",8,92,1,2
+"185",2024,"NYJ",1,64,0,0
+"186",2024,"NYJ",2,75,0,0
+"187",2024,"NYJ",3,86,0,0
+"188",2024,"NYJ",4,95,1,0
+"189",2024,"NYJ",5,90,0,0
+"190",2024,"NYJ",6,79,0,0
+"191",2024,"NYJ",7,76,0,0
+"192",2024,"NYJ",8,79,1,0
+"193",2024,"PHI",1,95,0,0
+"194",2024,"PHI",2,86,3,0
+"195",2024,"PHI",3,84,0,0
+"196",2024,"PHI",4,72,0,0
+"197",2024,"PHI",6,80,0,0
+"198",2024,"PHI",7,83,0,0
+"199",2024,"PHI",8,76,0,0
+"200",2024,"PIT",1,84,0,1
+"201",2024,"PIT",2,82,0,0
+"202",2024,"PIT",3,82,0,0
+"203",2024,"PIT",4,85,0,0
+"204",2024,"PIT",5,78,0,0
+"205",2024,"PIT",6,84,0,0
+"206",2024,"PIT",7,84,0,0
+"207",2024,"PIT",8,85,0,0
+"208",2024,"SEA",1,86,0,0
+"209",2024,"SEA",2,87,0,0
+"210",2024,"SEA",3,80,0,0
+"211",2024,"SEA",4,107,0,0
+"212",2024,"SEA",5,80,0,0
+"213",2024,"SEA",6,97,0,1
+"214",2024,"SEA",7,77,0,0
+"215",2024,"SEA",8,68,1,0
+"216",2024,"SF",1,89,0,0
+"217",2024,"SF",2,85,0,0
+"218",2024,"SF",3,86,1,0
+"219",2024,"SF",4,77,0,2
+"220",2024,"SF",5,77,0,0
+"221",2024,"SF",6,83,0,1
+"222",2024,"SF",7,75,0,0
+"223",2024,"SF",8,85,0,0
+"224",2024,"TB",1,82,0,0
+"225",2024,"TB",2,64,0,0
+"226",2024,"TB",3,71,0,0
+"227",2024,"TB",4,95,0,0
+"228",2024,"TB",5,67,0,0
+"229",2024,"TB",6,97,0,0
+"230",2024,"TB",7,100,0,0
+"231",2024,"TB",8,92,0,0
+"232",2024,"TEN",1,83,0,0
+"233",2024,"TEN",2,80,0,0
+"234",2024,"TEN",3,69,0,0
+"235",2024,"TEN",4,86,0,0
+"236",2024,"TEN",6,77,0,0
+"237",2024,"TEN",7,92,0,1
+"238",2024,"TEN",8,97,0,0
+"239",2024,"WAS",1,74,0,0
+"240",2024,"WAS",2,90,1,0
+"241",2024,"WAS",3,76,0,0
+"242",2024,"WAS",4,84,0,0
+"243",2024,"WAS",5,82,0,1
+"244",2024,"WAS",6,78,0,0
+"245",2024,"WAS",7,85,1,0
+"246",2024,"WAS",8,92,2,0
+"247",2024,NA,1,154,0,0
+"248",2024,NA,2,177,0,0
+"249",2024,NA,3,155,0,0
+"250",2024,NA,4,142,0,0
+"251",2024,NA,5,135,0,0
+"252",2024,NA,6,114,0,0
+"253",2024,NA,7,138,0,0
+"254",2024,NA,8,160,0,0
