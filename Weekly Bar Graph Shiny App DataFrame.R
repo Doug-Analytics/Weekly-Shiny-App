@@ -353,7 +353,7 @@ saveRDS(yards_gained, "Weekly_Bar_Graph_data_Yards_Gained.rds")
 
 
 fun <- load_pbp(SEASON) %>%
-  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+#  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
   group_by(season, posteam, week, penalty_type) %>%
   reframe(plays = n())
 
