@@ -127,10 +127,10 @@ route <- ftn_charts %>%
     rte == "10 - Swing" ~ "Swing",  
     rte == "11 - Texas/Angle" ~ "Texas/Angle",
     rte == "12 - Wheel" ~ "Wheel")) %>%
-  group_by(seas, week, off.x) %>%
+  group_by(seas, off.x) %>%
   mutate(snaps_rte = n()) %>%
   ungroup() %>%
-  group_by(seas, team = off.x, opp = def.x, week, category = rte) %>%
+  group_by(seas, team = off.x, category = rte) %>%
   summarize(plays = n(),
             rate = plays/last(snaps_rte), .groups = "drop") 
 
@@ -319,6 +319,127 @@ yards_gained <- load_pbp(SEASON) %>%
   reframe(plays = n(),
           rate = plays/last(snaps_play))
 
+
+field_pos <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1, !is.na(yardline_100)) %>%
+  mutate(field_pos_bracket = case_when(
+    yardline_100 <= 20 ~ "Red Zone",  
+    yardline_100 > 20 & yardline_100 <= 40 ~ "Opponent 21-40 yard line",  
+    yardline_100 > 40 & yardline_100 <= 60 ~ "Middle of the Field (40-60)",           
+    yardline_100 > 60 & yardline_100 <= 80 ~ "Own 21-40 yard line",  
+    yardline_100 > 80 ~ "Own Red Zone (1-20 yard line)")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_play = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = field_pos_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_play))
+
+run_pass <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1, !is.na(yardline_100)) %>%
+  mutate(run_pass_bracket = case_when(
+    rush == 1 ~ "Designed Run",
+    pass == 1 ~ "Dropback")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_play = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = run_pass_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_play))
+
+
+dropback_result <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass == 1) %>%
+  mutate(dropback_bracket = case_when(
+    sack == 1 ~ "Sack",
+    interception == 1 ~ "Interception",
+    complete_pass == 1 ~ "Complete Pass",
+    incomplete_pass == 1 ~ "Incomplete Pass",
+    qb_scramble == 1 ~ "QB Scramble",
+    TRUE ~ "Other")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_play = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = dropback_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_play)) 
+
+
+no_huddle <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  mutate(no_huddle_bracket = case_when(
+    no_huddle == 1 ~ "Yes",
+    no_huddle == 0 ~ "No")) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_play = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = no_huddle_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_play))
+
+
+dist_to_sticks <- load_pbp(SEASON) %>%
+  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
+  mutate(dist_to_sticks_bracket = case_when(
+    ydstogo >= 11 ~ "11+ yards to go",
+    ydstogo == 10 ~ "10 yards to go",
+    ydstogo >= 7 & ydstogo <= 9 ~ "6-9 yards to go",
+    ydstogo >= 4 & ydstogo <= 6 ~ "4-6 yards to go",
+    ydstogo <= 3 ~ "1-3 yards to go",
+    )) %>%
+  group_by(season, posteam, week) %>%
+  mutate(snaps_play = n()) %>%
+  group_by(seas = season, team = posteam, opp = defteam, week, category = dist_to_sticks_bracket) %>%
+  reframe(plays = n(),
+          rate = plays/last(snaps_play))
+
+concept$metric_type <- "concept"
+shell$metric_type <- "shell"
+air_yards$metric_type <- "air_yards"
+route$metric_type <- "route"
+ttp$metric_type <- "ttp"
+ttpr$metric_type <- "ttpr"
+downs$metric_type <- "downs"
+ydstogo$metric_type <- "ydstogo"
+run_gap$metric_type <- "run_gap"
+play_action$metric_type <- "play_action"
+pressure_allowed$metric_type <- "pressure_allowed"
+pass_rushers$metric_type <- "pass_rushers"
+men_in_box$metric_type <- "men_in_box"
+qb_pos$metric_type <- "qb_pos"
+wp$metric_type <- "wp"
+yards_gained$metric_type <- "yards_gained"
+field_pos$metric_type <- "field_pos"
+run_pass$metric_type <- "run_pass"
+dropback_result$metric_type <- "dropback_result"
+no_huddle$metric_type <- "no_huddle"
+
+
+combined_df <- bind_rows(
+  concept,
+  shell,
+  air_yards,
+  route,
+  ttp,
+  ttpr,
+  downs,
+  ydstogo,
+  run_gap,
+  play_action,
+  pressure_allowed,
+  pass_rushers,
+  men_in_box,
+  qb_pos,
+  wp,
+  yards_gained,
+  field_pos,
+  run_pass,
+  dropback_result,
+  no_huddle
+)
+
+
+saveRDS(combined_df, "Weekly_Bar_Graph_data_combined_df.rds") 
+
+
+
+
 saveRDS(concept, "Weekly_Bar_Graph_data_Run_Concepts.rds")
 
 saveRDS(shell, "Weekly_Bar_Graph_data_Shell_Coverages.rds")
@@ -351,13 +472,11 @@ saveRDS(wp, "Weekly_Bar_Graph_data_Win_Probability.rds")
 
 saveRDS(yards_gained, "Weekly_Bar_Graph_data_Yards_Gained.rds") 
 
+saveRDS(field_pos, "Weekly_Bar_Graph_data_Field_Position.rds") 
 
-fun <- load_pbp(SEASON) %>%
-#  filter(!is.na(epa), !is.na(down), pass + rush == 1) %>%
-  group_by(season, posteam, week) %>%
-  reframe(plays = n(),
-         inelg_pass = sum(ifelse(penalty_type == "Ineligible Downfield Pass", 1, NA), na.rm = T),
-         ill_shift = sum(ifelse(penalty_type == "Illegal Shift", 1, NA), na.rm = T))
+saveRDS(run_pass, "Weekly_Bar_Graph_data_Run_vs_Pass.rds") 
 
-write.csv(fun, "data_24.csv")
+saveRDS(dropback_result, "Weekly_Bar_Graph_data_Dropback_Result.rds") 
+
+saveRDS(no_huddle, "Weekly_Bar_Graph_data_No_Huddle.rds") 
 
