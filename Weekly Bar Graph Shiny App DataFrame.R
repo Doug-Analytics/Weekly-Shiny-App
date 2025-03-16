@@ -127,10 +127,10 @@ route <- ftn_charts %>%
     rte == "10 - Swing" ~ "Swing",  
     rte == "11 - Texas/Angle" ~ "Texas/Angle",
     rte == "12 - Wheel" ~ "Wheel")) %>%
-  group_by(seas, off.x) %>%
+  group_by(seas, week, off.x) %>%
   mutate(snaps_rte = n()) %>%
   ungroup() %>%
-  group_by(seas, team = off.x, category = rte) %>%
+  group_by(seas, team = off.x, opp = def.x, week, category = rte) %>%
   summarize(plays = n(),
             rate = plays/last(snaps_rte), .groups = "drop") 
 
